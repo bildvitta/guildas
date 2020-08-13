@@ -1,7 +1,5 @@
 const getters = {
-    events: state => {
-        return state.events
-    }
+    events: state => state.events
 }   
 
 export default getters

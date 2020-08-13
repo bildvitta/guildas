@@ -1,4 +1,4 @@
-import http from "../httpconfig";
+import http from '../httpconfig'
 
 const getCategories = url => {
   return http
@@ -7,10 +7,10 @@ const getCategories = url => {
       return response.data
     })
     .catch(error => {
-      console.error(error.message);
-    });
-};
+      console.error(error.message)
+    })
+}
 
 export default {
-    getCategories
+  getCategories
 }

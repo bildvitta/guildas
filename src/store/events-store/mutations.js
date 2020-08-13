@@ -1,7 +1,6 @@
 const mutations = {
-    setEvents(state, events){
+    setEvents (state, events) {
         state.events = events
-        console.log(state.events)
     }
 }
 
