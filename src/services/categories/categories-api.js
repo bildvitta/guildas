@@ -1,11 +1,10 @@
 import http from "../httpconfig";
 
 const getCategories = url => {
-  http
+  return http
     .get(url)
     .then(response => {
-      console.log(response);
-      return response;
+      return response.data
     })
     .catch(error => {
       console.error(error.message);

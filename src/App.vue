@@ -4,15 +4,23 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+import CategoriesAPI from 'src/services/categories/categories-api'
 
 export default {
   name: "App",
   mounted() {
-    this.getCategories();
+    this.setCategories()
+    this.setEvents()
+    this.setSubjects()
+  },
+  computed: {
+    ...mapGetters('categories', ['categories'])
   },
   methods: {
-    ...mapActions('categories', ['getCategories'])
+    ...mapActions('categories', ['setCategories']),
+    ...mapActions('events', ['setEvents']),
+    ...mapActions('subjects', ['setSubjects']),
   }
 };
 </script>

@@ -1,11 +1,11 @@
-import CategoriesAPI from 'src/services/categories/categories-api'
+import CategoriesAPI from "src/services/categories/categories-api";
 
 const actions = {
-  getCategories ({commit}) {
-    let categories = CategoriesAPI.getCategories('/categories')
-    console.log(categories)
+  async setCategories({ commit }) {
+    let categories = await CategoriesAPI.getCategories('/categories')
+    
     commit('setCategories', categories)
   }
-}
+};
 
-export default actions
+export default actions;

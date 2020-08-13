@@ -19,7 +19,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
+    <!-- <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
@@ -38,7 +38,8 @@
           v-bind="link"
         />
       </q-list>
-    </q-drawer>
+    </q-drawer> -->
+    
 
     <q-page-container>
       <router-view />
@@ -47,7 +48,7 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
+// import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
@@ -94,14 +95,19 @@ const linksData = [
   }
 ];
 
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
+  // components: { EssentialLink },
   data () {
     return {
       leftDrawerOpen: false,
       essentialLinks: linksData
     }
+  },
+  computed: {
+    ...mapGetters('categories', ['categories'])
   }
 }
 </script>

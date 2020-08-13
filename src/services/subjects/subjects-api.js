@@ -1,11 +1,10 @@
 import http from '../httpconfig'
 
-const getSubjects= url => {
+const getSubjects = url => {
   return http
     .get(url)
     .then(response => {
-      console.log(response);
-      return response;
+      return response.data;
     })
     .catch(error => {
       console.error(error.message);

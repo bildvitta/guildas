@@ -1,5 +1,5 @@
 const getters = {
-  getCategories: state => {
+  categories: state => {
     return state.categories
   }
 }
