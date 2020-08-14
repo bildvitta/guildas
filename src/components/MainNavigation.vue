@@ -6,11 +6,7 @@
 
     <ul class="main_nav__link-wrapper">
       <li v-for="link in linksData" :key="link.title" class="main_nav__list-item">
-        <router-link
-          class="main_nav__link"
-          :to="link.link"
-          :class="checkPath(link.link) ? 'active-link' : ''"
-        >{{ link.title }}</router-link>
+        <router-link class="main_nav__link" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
       </li>
     </ul>
   </nav>
@@ -23,17 +19,14 @@ export default {
   props: {
     linksData: {
       required: true,
+      type: Array
     },
   },
 
   methods: {
-    checkPath(path) {
-      if (this.$route.path === path) return true;
-      return false;
-    },
+    checkPath (path) {
+      return this.$route.path === path ? 'active-link' : ''
+    }
   },
-};
+}
 </script>
-
-<style>
-</style>

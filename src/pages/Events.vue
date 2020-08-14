@@ -1,7 +1,6 @@
 <template>
   <div>
     <search-bar />
-
     <carousel />
   </div>
 </template>
@@ -14,15 +13,14 @@ export default {
   name: "events-page",
 
   components: {
-    "search-bar": SearchBar,
-    carousel: Carousel,
+    SearchBar,
+    Carousel,
   },
 
-  data: () => ({
-    slide: 1,
-  }),
-};
+  data () {
+    return {
+      slide: 1,
+    };
+  },
+}
 </script>
-
-<style>
-</style>

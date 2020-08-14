@@ -8,8 +8,8 @@
     arrows
     transition-prev="fade"
     transition-next="fade"
-    @mouseenter="autoplay = false"
-    @mouseleave="autoplay = true"
+    @mouseenter="toggleAutoplay()"
+    @mouseleave="toggleAutoplay()"
   >
     <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
     <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
@@ -20,14 +20,19 @@
 
 <script>
 export default {
-    name: 'carousel',
+  name: "carousel",
 
-    data: () => ({
-        slide: 1,
-        autoplay: 3000
-    })
-};
+  data () {
+    return {
+      slide: 1,
+      autoplay: 3000,
+    };
+  },
+
+  methods: {
+    toggleAutoplay () {
+      this.autoplay = this.autoplay ? false : true;
+    },
+  },
+}
 </script>
-
-<style>
-</style>

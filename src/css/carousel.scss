@@ -10,12 +10,12 @@
         bottom: -50px;
     }
 
-    .q-icon {
+    &__navigation .q-icon {
         color: $light-gray-text;
         font-size: 10px;
     }
 
-    &__navigation-icon--active .q-icon{
+    &__navigation-icon--active .q-icon {
         color: $strong-pink;
     }
 

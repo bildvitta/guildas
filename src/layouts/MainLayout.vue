@@ -7,23 +7,17 @@
         <router-link to="/" class="mobile_main_nav__logo vertical-middle">
           <img class="main_nav__logo" src="~assets/img/logo.png" alt="NAVE - Logo" />
         </router-link>
-        <q-btn flat round dense @click='leftDrawerOpen = true'>
+        <q-btn flat round dense @click="openLeftDrawer()">
           <q-icon name="menu" />
         </q-btn>
       </div>
     </q-toolbar>
 
-    <q-drawer
-      behavior="mobile"
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <!-- TODO: Nav Mobile -->
+    <q-drawer behavior="mobile" v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
       <q-list>
         <q-item-label header class="text-grey-8">
-          <img class="mobile_main_nav__logo mobile_main_nav__logo--side_menu q-py-md" src="~assets/img/logo.png" alt="NAVE - Logo" /></q-item-label>
+          <img class="mobile_main_nav__logo mobile_main_nav__logo--side_menu q-py-md" src="~assets/img/logo.png" alt="NAVE - Logo"/>
+        </q-item-label>
         <EssentialLink v-for="link in linksData" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
@@ -43,11 +37,11 @@ export default {
   name: "MainLayout",
 
   components: {
-    EssentialLink: EssentialLink,
-    "main-navigation": MainNavigation,
+    EssentialLink,
+    MainNavigation,
   },
 
-  data() {
+  data () {
     return {
       leftDrawerOpen: false,
       linksData: [
@@ -84,9 +78,10 @@ export default {
     ...mapGetters("categories", ["categories"]),
   },
 
-  methods: {},
-};
+  methods: {
+		openLeftDrawer () {
+			this.leftDrawerOpen = true
+		}
+	},
+}
 </script>
-
-<style lang='scss'>
-</style>
