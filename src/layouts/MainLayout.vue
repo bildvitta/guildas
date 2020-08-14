@@ -1,45 +1,32 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+  <q-layout view="lHh Lpr lFf" class="container">
+    <main-navigation :linksData="linksData" />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+    <q-toolbar class="mobile_main_nav text-white q-py-lg q-px-none">
+      <div class="container">
+        <router-link to="/" class="mobile_main_nav__logo vertical-middle">
+          <img class="main_nav__logo" src="~assets/img/logo.png" alt="NAVE - Logo" />
+        </router-link>
+        <q-btn flat round dense @click='leftDrawerOpen = true'>
+          <q-icon name="menu" />
+        </q-btn>
+      </div>
+    </q-toolbar>
 
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <!-- <q-drawer
+    <q-drawer
+      behavior="mobile"
       v-model="leftDrawerOpen"
       show-if-above
       bordered
       content-class="bg-grey-1"
     >
+      <!-- TODO: Nav Mobile -->
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item-label header class="text-grey-8">
+          <img class="mobile_main_nav__logo mobile_main_nav__logo--side_menu q-py-md" src="~assets/img/logo.png" alt="NAVE - Logo" /></q-item-label>
+        <EssentialLink v-for="link in linksData" :key="link.title" v-bind="link" />
       </q-list>
-    </q-drawer> -->
-    
+    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -48,66 +35,58 @@
 </template>
 
 <script>
-// import EssentialLink from 'components/EssentialLink.vue'
-
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
+import EssentialLink from "components/EssentialLink.vue";
+import MainNavigation from "components/MainNavigation.vue";
 
 export default {
-  name: 'MainLayout',
-  // components: { EssentialLink },
-  data () {
+  name: "MainLayout",
+
+  components: {
+    EssentialLink: EssentialLink,
+    "main-navigation": MainNavigation,
+  },
+
+  data() {
     return {
       leftDrawerOpen: false,
-      essentialLinks: linksData
-    }
+      linksData: [
+        {
+          title: "Home",
+          icon: "home",
+          link: "/",
+        },
+        {
+          title: "Sobre",
+          icon: "school",
+          link: "/sobre",
+        },
+        {
+          title: "Cases",
+          icon: "grade",
+          link: "/cases",
+        },
+        {
+          title: "Eventos",
+          icon: "date_range",
+          link: "/eventos",
+        },
+        {
+          title: "Contato",
+          icon: "email",
+          link: "/contato",
+        },
+      ],
+    };
   },
+
   computed: {
-    ...mapGetters('categories', ['categories'])
-  }
-}
+    ...mapGetters("categories", ["categories"]),
+  },
+
+  methods: {},
+};
 </script>
+
+<style lang='scss'>
+</style>
