@@ -31,9 +31,13 @@ img {
 }
 
 .container {
-	max-width: 1140px;
+	// max-width: 1140px;
 	width: calc(100% - 40px);
-	margin: 0 auto;
+ margin: 0 auto;
+ 
+ @media (min-width: 1500px){
+  width: calc(100% - 300px);
+ }
 }
 
 .q-layout {

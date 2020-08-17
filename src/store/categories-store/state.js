@@ -1,5 +1,5 @@
 const state = {
-    categories: []
+    categories: [],    
 }
 
 export default state

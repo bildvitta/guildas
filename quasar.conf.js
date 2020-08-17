@@ -30,6 +30,11 @@ module.exports = function (/* ctx */) {
       'searchbar.scss',
       'carousel.scss',
       'mobile-main-nav.scss',
+      'slider.scss',
+      'event-card.scss',
+      'footer.scss',
+      'image-banner.scss',
+      'single-event-details.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras

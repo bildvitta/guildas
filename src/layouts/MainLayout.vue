@@ -25,6 +25,8 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <app-footer></app-footer>
   </q-layout>
 </template>
 
@@ -32,6 +34,7 @@
 import { mapGetters } from "vuex";
 import EssentialLink from "components/EssentialLink.vue";
 import MainNavigation from "components/MainNavigation.vue";
+import AppFooter from "components/Footer.vue";
 
 export default {
   name: "MainLayout",
@@ -39,6 +42,7 @@ export default {
   components: {
     EssentialLink,
     MainNavigation,
+    'app-footer': AppFooter
   },
 
   data () {

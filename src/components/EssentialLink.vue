@@ -30,7 +30,7 @@ export default {
     },
 
     caption: {
-      type: String,
+    	type: String,
       default: ''
     },
 

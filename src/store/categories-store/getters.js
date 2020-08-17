@@ -1,5 +1,5 @@
 const getters = {
-  categories: state => state.categories
+  categories: state => state.categories,
 }
 
 export default getters

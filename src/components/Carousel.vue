@@ -20,19 +20,19 @@
 
 <script>
 export default {
-  name: "carousel",
+  name: 'carousel',
 
   data() {
     return {
       slide: 1,
-      autoplay: 3000,
+      autoplay: 3000
     }
   },
 
   methods: {
-    toggleAutoplay() {
-      this.autoplay = !this.autoplay;
-    }
+    toggleAutoplay () {
+      this.autoplay = !this.autoplay
+    },
   }
-};
+}
 </script>
