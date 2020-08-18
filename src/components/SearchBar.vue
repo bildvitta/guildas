@@ -11,16 +11,16 @@
 
 <script>
 export default {
-  name: 'search-bar',
+	name: 'search-bar',
 
-  data () {
+	data () {
 		return {
 			search: ''
 		}
-  },
+	},
 
-  methods: {
-  	searchEvents () {},
-  }
+	methods: {
+  	searchEvents () {}
+	}
 }
 </script>

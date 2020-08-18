@@ -1,40 +1,40 @@
 .search_wrapper {
-    box-shadow: 0px 3px 6px #7f2bed26;
+  box-shadow: 0px 3px 6px #7f2bed26;
+  border-radius: 10px;
+  position: relative;
+
+  .q-input {
+    padding: 0 20px;
+
+    .q-field__native {
+      color: $medium-gray-text;
+    }
+  }
+
+  .q-icon {
+    color: $strong-pink;
+  }
+
+  .q-field__marginal,
+  .q-field__control {
+    height: auto;
+  }
+
+  .q-btn {
+    background-color: $medium-purple;
+    color: #fff;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    padding: 2px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
     border-radius: 10px;
-    position: relative;
+    box-shadow: none;
+  }
 
-    .q-input {
-        padding: 0 20px;
-        
-        .q-field__native {
-            color: $medium-gray-text;
-        }
-    }
-
-    .q-icon {
-        color: $strong-pink;
-    }
-
-    .q-field__marginal,
-    .q-field__control {
-        height: auto;
-    }
-
-    .q-btn {
-        background-color: $medium-purple;
-        color: #fff;
-        font-weight: 700;
-        text-transform: none;
-        font-size: 14px;
-        padding: 2px 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        border-radius: 10px;
-        box-shadow: none;
-    }
-
-    .q-btn__wrapper {
-        box-shadow: none;
-    }
+  .q-btn__wrapper {
+    box-shadow: none;
+  }
 }

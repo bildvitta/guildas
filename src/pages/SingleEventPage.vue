@@ -12,12 +12,12 @@ import SearchBar from 'src/components/SearchBar'
 import SingleEventDetails from 'src/components/SingleEventDetails'
 
 export default {
- name: 'single-event-page',
+	name: 'single-event-page',
 
- components: {
-  SearchBar,
-  SingleEventDetails
- }
+	components: {
+		SearchBar,
+		SingleEventDetails
+	}
 }
 </script>
 

@@ -28,51 +28,51 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import SearchBar from "components/SearchBar.vue";
-import Carousel from "components/Carousel.vue";
-import Slider from "components/Slider.vue";
-import EventCard from "components/EventCard.vue";
+import SearchBar from 'components/SearchBar.vue'
+import Carousel from 'components/Carousel.vue'
+import Slider from 'components/Slider.vue'
+import EventCard from 'components/EventCard.vue'
 
 export default {
-  name: "events-page",
+	name: 'events-page',
 
-  components: {
-    SearchBar,
-    Carousel,
-    Slider,
-    EventCard
-  },
+	components: {
+		SearchBar,
+		Carousel,
+		Slider,
+		EventCard
+	},
 
-  data () {
-    return {
-      slide: 1,
-    };
-  },
+	data () {
+		return {
+			slide: 1
+		}
+	},
 
-  computed: {
-    ...mapGetters('events', ['eventCards']),
+	computed: {
+		...mapGetters('events', ['eventCards']),
 
-   setCategorySliderWidth: function () {
-    const cardWidth = 325
+		setCategorySliderWidth: function () {
+			const cardWidth = 325
 
-    let categoryWidth
+			let categoryWidth
 
-    if (this.categoryCards.length * cardWidth > window.innerWidth) {
-     categoryWidth = 'width: ' + this.categoryCards.length * cardWidth + 'px'
-    } else {
-     categoryWidth = 'width: 100%'
-    }
+			if (this.categoryCards.length * cardWidth > window.innerWidth) {
+				categoryWidth = 'width: ' + this.categoryCards.length * cardWidth + 'px'
+			} else {
+				categoryWidth = 'width: 100%'
+			}
 
-    return categoryWidth
-   }
-  },
+			return categoryWidth
+		}
+	},
 
-  methods: {
-   checkCategoryCardSize () {
-    const cardWidth = 325
+	methods: {
+		checkCategoryCardSize () {
+			const cardWidth = 325
 
-    return 
-   }
-  }
-};
+			return 
+		}
+	}
+}
 </script>

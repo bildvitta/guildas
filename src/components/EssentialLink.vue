@@ -22,27 +22,28 @@
 
 <script>
 export default {
-  name: 'EssentialLink',
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
+	name: 'EssentialLink',
+  
+	props: {
+		title: {
+			type: String,
+			required: true
+		},
 
-    caption: {
+		caption: {
     	type: String,
-      default: ''
-    },
+			default: ''
+		},
 
-    link: {
-      type: String,
-      default: '#'
-    },
+		link: {
+			type: String,
+			default: '#'
+		},
 
-    icon: {
-      type: String,
-      default: ''
-    }
-  }
+		icon: {
+			type: String,
+			default: ''
+		}
+	}
 }
 </script>

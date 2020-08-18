@@ -14,19 +14,19 @@
 
 <script>
 export default {
-  name: 'main-navigation',
+	name: 'main-navigation',
 
-  props: {
-    linksData: {
-      required: true,
-      type: Array
-    }
-  },
+	props: {
+		linksData: {
+			required: true,
+			type: Array
+		}
+	},
 
 	methods: {
   	checkPath (path) {
     	return this.$route.path.split('/')[1] === path.replace('/', '') ? 'active-link' : ''
-    }
+		}
 	}
 }
 </script>

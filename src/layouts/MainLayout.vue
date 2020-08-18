@@ -31,61 +31,61 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import EssentialLink from "components/EssentialLink.vue";
-import MainNavigation from "components/MainNavigation.vue";
-import AppFooter from "components/Footer.vue";
+import { mapGetters } from 'vuex'
+import EssentialLink from 'components/EssentialLink.vue'
+import MainNavigation from 'components/MainNavigation.vue'
+import AppFooter from 'components/Footer.vue'
 
 export default {
-  name: "MainLayout",
+	name: 'MainLayout',
 
-  components: {
-    EssentialLink,
-    MainNavigation,
-    'app-footer': AppFooter
-  },
+	components: {
+		EssentialLink,
+		MainNavigation,
+		'app-footer': AppFooter
+	},
 
-  data () {
-    return {
-      leftDrawerOpen: false,
-      linksData: [
-        {
-          title: "Home",
-          icon: "home",
-          link: "/",
-        },
-        {
-          title: "Sobre",
-          icon: "school",
-          link: "/sobre",
-        },
-        {
-          title: "Cases",
-          icon: "grade",
-          link: "/cases",
-        },
-        {
-          title: "Eventos",
-          icon: "date_range",
-          link: "/eventos",
-        },
-        {
-          title: "Contato",
-          icon: "email",
-          link: "/contato",
-        },
-      ],
-    };
-  },
+	data () {
+		return {
+			leftDrawerOpen: false,
+			linksData: [
+				{
+					title: 'Home',
+					icon: 'home',
+					link: '/'
+				},
+				{
+					title: 'Sobre',
+					icon: 'school',
+					link: '/sobre'
+				},
+				{
+					title: 'Cases',
+					icon: 'grade',
+					link: '/cases'
+				},
+				{
+					title: 'Eventos',
+					icon: 'date_range',
+					link: '/eventos'
+				},
+				{
+					title: 'Contato',
+					icon: 'email',
+					link: '/contato'
+				}
+			]
+		}
+	},
 
-  computed: {
-    ...mapGetters("categories", ["categories"]),
-  },
+	computed: {
+		...mapGetters('categories', ['categories'])
+	},
 
-  methods: {
+	methods: {
 		openLeftDrawer () {
 			this.leftDrawerOpen = true
 		}
-	},
+	}
 }
 </script>

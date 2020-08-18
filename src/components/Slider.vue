@@ -33,12 +33,12 @@ export default {
    	},
    	useArrows: {
     	type: Boolean,
-    	default: () => true
+    	default: true
    	}
-  },
+	},
 
 	components: {
-    AnSlider
-  }
+		AnSlider
+	}
 }
 </script>

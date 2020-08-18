@@ -1,57 +1,57 @@
 .slider {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 
-	&__title {
-		font-family: "Press Start 2P", cursive;
-		font-size: 16px;
- 	}
+  &__title {
+    font-family: "Press Start 2P", cursive;
+    font-size: 16px;
+  }
 
-	&__arrows--prev-arrow,
-	&__arrows--next-arrow {
-		font-size: 20px;
-		transition: color 0.25s linear;
+  &__arrows--prev-arrow,
+  &__arrows--next-arrow {
+    font-size: 20px;
+    transition: color 0.25s linear;
 
-		&:hover {
-			color: $strong-pink;
-		}
-	}
+    &:hover {
+      color: $strong-pink;
+    }
+  }
 
-	&__item{}
- 
- 	&__item:last-of-type{
-		margin-right: 20px;
-	}
+  &__item {}
 
-	&__item--rounded {
-		width: 150px;
-		height: 150px;
-	}
+  &__item:last-of-type {
+    margin-right: 20px;
+  }
 
-	&__item + &__item {
-		margin-left: 15px;
- 	}
- 
- 	&__item__subject {
-  	color: $darker-purple-text;
-	}
+  &__item--rounded {
+    width: 150px;
+    height: 150px;
+  }
+
+  &__item + &__item {
+    margin-left: 15px;
+  }
+
+  &__item__subject {
+    color: $darker-purple-text;
+  }
 }
 
 .slider-margin-handler {
-	margin-right: -20px;
+  margin-right: -20px;
 
-	@media (min-width: 1500px) {
-		margin-right: -150px;
- 	}
- 
- 	.arrows-margin-handler {
-  	margin-right: 20px;
+  @media (min-width: 1500px) {
+    margin-right: -150px;
+  }
 
-  	@media (max-width: 500px) {
-   		margin-right: 20px;
-  	}
+  .arrows-margin-handler {
+    margin-right: 20px;
 
-  	@media (min-width: 1500px) {
-   		margin-right: 150px;
-		}
- 	}
+    @media (max-width: 500px) {
+      margin-right: 20px;
+    }
+
+    @media (min-width: 1500px) {
+      margin-right: 150px;
+    }
+  }
 }

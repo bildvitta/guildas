@@ -29,9 +29,7 @@ module.exports = {
 
     // https://github.com/prettier/eslint-config-prettier#installation
     // usage with Prettier, provided by 'eslint-config-prettier'.
-    'prettier',
-    
-    'prettier/vue'
+
   ],
 
   plugins: [
@@ -55,9 +53,20 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'quotes': ['error', 'single'],
     'prefer-promise-reject-errors': 'off',
-
-
+    'space-before-blocks': ['error', 'always'],
+    'indent': ['error', 'tab'],
+    'block-spacing': ['error', 'always'],
+    'semi': [2, 'never'],
+    'comma-dangle': ['error', {
+      'arrays': 'never',
+      'objects': 'never',
+      'imports': 'never',
+      'exports': 'never',
+      'functions': 'never'
+    }],
+    'space-before-function-paren': 'error',
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }

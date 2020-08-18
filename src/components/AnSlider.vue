@@ -16,111 +16,111 @@
 </template>
 
 <script>
-import smoothscroll from "smoothscroll-polyfill";
+import smoothscroll from 'smoothscroll-polyfill'
 
 export default {
-  props: {
-    expanded: {
-      type: Boolean,
-    },
+	props: {
+		expanded: {
+			type: Boolean
+		},
 
-    animationOnScroll: {
-      type: Boolean,
-      default: true,
-    },
-  },
+		animationOnScroll: {
+			type: Boolean,
+			default: true
+		}
+	},
 
-  data() {
-    return {
-      start: 1,
-      difference: 0,
-      drag: false,
-      hideBar: false,
-      element: null,
-    };
-  },
+	data () {
+		return {
+			start: 1,
+			difference: 0,
+			drag: false,
+			hideBar: false,
+			element: null
+		}
+	},
 
-  computed: {
-    expandedClass() {
-      return this.expanded ? "an-slider--expanded" : "full-width";
-    },
+	computed: {
+		expandedClass () {
+			return this.expanded ? 'an-slider--expanded' : 'full-width'
+		},
 
-    expandedContainerClass() {
-      return this.expanded ? "an-slider__container--expanded" : "";
-    },
-  },
+		expandedContainerClass () {
+			return this.expanded ? 'an-slider__container--expanded' : ''
+		}
+	},
 
-  mounted() {
-    this.element = this.$refs.slider;
-  },
+	mounted () {
+		this.element = this.$refs.slider
+	},
 
-  created() {
-    // Polyfill for scrolling
-    window.__forceSmoothScrollPolyfill__ = true;
-    smoothscroll.polyfill();
-    window.addEventListener("mouseup", this.mouseUp);
-  },
+	created () {
+		// Polyfill for scrolling
+		window.__forceSmoothScrollPolyfill__ = true
+		smoothscroll.polyfill()
+		window.addEventListener('mouseup', this.mouseUp)
+	},
 
-  destroyed() {
-    window.removeEventListener("mouseup", this.mouseUp);
-  },
+	destroyed () {
+		window.removeEventListener('mouseup', this.mouseUp)
+	},
 
-  methods: {
-    mouseDown(event) {
-      if (!event) {
-        event = window.event;
-      }
+	methods: {
+		mouseDown (event) {
+			if (!event) {
+				event = window.event
+			}
 
-      event.preventDefault();
-      this.start = event.clientX + this.element.scrollLeft;
-      this.difference = 0;
-      this.drag = true;
-    },
+			event.preventDefault()
+			this.start = event.clientX + this.element.scrollLeft
+			this.difference = 0
+			this.drag = true
+		},
 
-    mouseMove(event) {
-      if (!this.drag) {
-        return null;
-      }
+		mouseMove (event) {
+			if (!this.drag) {
+				return null
+			}
 
-      if (!event) {
-        event = window.event;
-      }
+			if (!event) {
+				event = window.event
+			}
 
-      event.preventDefault();
-      this.difference = this.start - (event.clientX + this.element.scrollLeft);
-      this.element.scrollLeft += this.difference;
-    },
+			event.preventDefault()
+			this.difference = this.start - (event.clientX + this.element.scrollLeft)
+			this.element.scrollLeft += this.difference
+		},
 
-    mouseUp(event) {
-      let tick = 1;
+		mouseUp (event) {
+			let tick = 1
 
-      if (!event) {
-        event = window.event;
-      }
+			if (!event) {
+				event = window.event
+			}
 
-      event.preventDefault();
-      this.drag = false;
+			event.preventDefault()
+			this.drag = false
 
-      const animate = () => {
-        const step = Math.sin(tick);
+			const animate = () => {
+				const step = Math.sin(tick)
 
-        if (step <= 0) {
-          this.difference = 0;
-          window.cancelAnimationFrame(animate);
-        } else {
-          this.element.scrollLeft += this.difference * step;
-          tick -= 0.02;
-          window.requestAnimationFrame(animate);
-        }
-      };
+				if (step <= 0) {
+					this.difference = 0
+					window.cancelAnimationFrame(animate)
+				} else {
+					this.element.scrollLeft += this.difference * step
+					tick -= 0.02
+					window.requestAnimationFrame(animate)
+				}
+			}
 
-      this.animationOnScroll && animate();
-    },
-  },
-};
+			this.animationOnScroll && animate()
+		}
+	}
+}
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 .an-slider {
   overflow: hidden;
   overflow-x: auto;
