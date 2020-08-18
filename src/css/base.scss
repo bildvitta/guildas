@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $secondary;
+}
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  // max-width: 1140px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+
+  @media (min-width: 1500px) {
+    width: calc(100% - 300px);
+  }
+}
+
+.q-layout {
+  padding: 40px 0 60px 0;
+
+  @media (max-width: 768px) {
+    margin-top: 90px;
+  }
+}

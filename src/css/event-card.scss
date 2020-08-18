@@ -1,0 +1,39 @@
+.event-card {
+  width: 325px;
+  background-color: $secondary;
+
+  @media (max-width: 400px) {
+    width: 280px;
+  }
+
+  &__image {
+    border-radius: 10px !important;
+  }
+
+  &__description-title {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__description-date {
+    color: $medium-purple;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__description-text {
+    color: $medium-gray-text;
+  }
+
+  &__location-icon {
+    color: $strong-pink;
+    font-size: 18px;
+  }
+
+  &__location-address {
+    margin-left: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: $darker-purple-text;
+  }
+}
