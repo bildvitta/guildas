@@ -52,7 +52,7 @@ export default {
   components: {
     EssentialLink,
     MainNavigation,
-    'app-footer': AppFooter
+    AppFooter
   },
 
   data () {

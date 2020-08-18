@@ -18,7 +18,7 @@
 
     <div class="event-description">
       <h2 class="event-description__heading">Descrição do evento</h2>
-      <p class="event-description__text"></p>
+      <p class="event-description__text" v-html="event.descriptionText"></p>
     </div>
 
     <div class="event-extra">
@@ -38,6 +38,18 @@ import EventCard from 'src/components/EventCard'
 
 export default {
   name: 'single-event-details',
+
+  data () {
+    return{
+      event: {
+        title: 'Título do Evento',
+        imageUrl: 'https://cdn.quasar.dev/img/mountains.jpg',
+        date: '28 AGOSTO // 21:00',
+        descriptionText: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I...',
+        location: 'Auditório NAVE - Iguatemi Shopping...'
+      }
+    }
+  },
 
   components: {
     Slider,

@@ -10,8 +10,8 @@ const actions = {
     }
 
     const categories = await CategoriesAPI.getCategories('/categories')
-    commit('setCategories', categories)
 
+    commit('setCategories', categories)
     LocalStorage.set('categories', categories)
   }
 }

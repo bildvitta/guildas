@@ -57,23 +57,12 @@ export default {
 
       let categoryWidth
 
-      if (this.categoryCards.length * cardWidth > window.innerWidth) {
-        categoryWidth =
-          'width: ' + this.categoryCards.length * cardWidth + 'px'
-      } else {
-        categoryWidth = 'width: 100%'
-      }
-
-      return categoryWidth
+      return this.categoryCards.length * cardWidth > window.innerWidth
+        ? `width: ${this.categoryCards.length * cardWidth}px`
+        : 'width 100%'
     }
   },
 
-  methods: {
-    checkCategoryCardSize () {
-      const cardWidth = 325
-
-      return
-    }
-  }
+  methods: {}
 }
 </script>
