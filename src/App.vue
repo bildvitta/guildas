@@ -7,12 +7,12 @@
 import CategoriesAPI from 'src/services/categories/categories-api'
 
 export default {
-	name: 'App',
+  name: 'App',
 
-	mounted () {},
+  mounted () {},
 
-	computed: {},
+  computed: {},
 
-	methods: {}
+  methods: {}
 }
 </script>
