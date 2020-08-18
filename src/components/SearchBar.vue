@@ -1,5 +1,5 @@
 <template>
-  <div class="search_wrapper row q-mb-xl">
+  <div class="search_wrapper row q-mb-xl margin-fix-header">
     <q-input class="col-9" borderless v-model="search" @keyup.enter="searchEvents()">
       <template v-slot:prepend>
         <q-icon name="search" />

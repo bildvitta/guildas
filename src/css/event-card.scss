@@ -23,6 +23,12 @@
 
   &__description-text {
     color: $medium-gray-text;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
   }
 
   &__location-icon {
@@ -35,5 +41,17 @@
     margin-bottom: 0;
     font-size: 12px;
     color: $darker-purple-text;
+    max-width: 30ch;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: inline-block;
+
+    
+
+    @media (max-width: 600px) {
+      max-width: 25ch;
+    }
   }
 }

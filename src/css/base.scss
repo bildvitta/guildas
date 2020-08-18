@@ -20,10 +20,16 @@ li {
   list-style: none;
 }
 
+h2 {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
 a,
 a:visited,
 a:link {
   text-decoration: none;
+  color: inherit;
 }
 
 img {

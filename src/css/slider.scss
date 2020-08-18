@@ -4,6 +4,10 @@
   &__title {
     font-family: "Press Start 2P", cursive;
     font-size: 16px;
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
   }
 
   &__arrows--prev-arrow,
@@ -15,8 +19,6 @@
       color: $strong-pink;
     }
   }
-
-  &__item {}
 
   &__item:last-of-type {
     margin-right: 20px;

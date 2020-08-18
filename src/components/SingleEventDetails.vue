@@ -1,16 +1,14 @@
 <template>
   <div class="event-details">
-    <div class="event-details__title-box row">
-      <div class="col-6">
-        <h1 class="event-details__title">Spaceship Experience 2020</h1>
+    <div class="event-details__title-box q-mb-xl row">
+      <div class="col-12 col-sm-6 q-mb-lg">
+        <h1 class="event-details__title">{{ event.title }}</h1>
       </div>
-      <div class="col-6">
-        <p class="event-details__date">28 Agosto // 21:00</p>
+      <div class="col-12 col-sm-6">
+        <p class="event-details__date">{{ event.date }}</p>
         <div class="event-details__location">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
-          <p
-            class="event-details__location-address"
-          >Auditório NAVE - Iguatemi Shopping, Lorem ipsum, 2 andar, Setor Inovação</p>
+          <p class="event-details__location-address">{{ event.location }}</p>
         </div>
         <q-btn class="event-details__btn" flat label="Simbora!" />
       </div>
@@ -40,13 +38,15 @@ export default {
   name: 'single-event-details',
 
   data () {
-    return{
+    return {
       event: {
-        title: 'Título do Evento',
+        title: 'Spaceship Experience 2020',
         imageUrl: 'https://cdn.quasar.dev/img/mountains.jpg',
         date: '28 AGOSTO // 21:00',
-        descriptionText: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I...',
-        location: 'Auditório NAVE - Iguatemi Shopping...'
+        descriptionText:
+          'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I...',
+        location:
+          'Auditório NAVE - Iguatemi Shopping, Lorem ipsum, 2 andar, Setor Inovação'
       }
     }
   },

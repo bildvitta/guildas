@@ -10,7 +10,8 @@ const routes = [
       { name: 'Contact', path: '/contato', component: () => import('pages/Contact.vue') },
       { name: 'Events', path: '/eventos', component: () => import('pages/Events.vue')},
       { name: 'Events', path: '/eventos/:id', component: () => import('pages/SingleEventPage.vue') },
-      { name: 'Cases', path: '/cases', component: () => import('pages/Cases.vue') }
+      { name: 'Cases', path: '/cases', component: () => import('pages/Cases.vue') },
+      { name: 'Subject', path: '/assunto/:id', component: () => import('pages/Subject.vue') }
     ]
   },
   {

@@ -13,6 +13,15 @@ const actions = {
 
     commit('setSubjects', subjects)
     LocalStorage.set('subjects', subjects)
+  },
+
+  async setSubjectById ({ state, commit }, id) {
+    if (state.subjects.length > 0) {
+      return state.subjects.find(subject => subject.id === id)
+    }
+
+    const subject = await SubjectsAPI.getSubjects(`/subjects/${id}`)
+    commit('setSubjects', subject)
   }
 }
 

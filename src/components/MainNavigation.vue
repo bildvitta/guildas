@@ -1,5 +1,5 @@
 <template>
-  <nav class="main_nav">
+  <nav id="header" class="main_nav">
     <router-link to="/">
       <img class="main_nav__logo" src="~assets/img/logo.png" alt="NAVE - Logo" />
     </router-link>
