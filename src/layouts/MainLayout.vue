@@ -13,10 +13,20 @@
       </div>
     </q-toolbar>
 
-    <q-drawer behavior="mobile" v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
+    <q-drawer
+      behavior="mobile"
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      content-class="bg-grey-1"
+    >
       <q-list>
         <q-item-label header class="text-grey-8">
-          <img class="mobile_main_nav__logo mobile_main_nav__logo--side_menu q-py-md" src="~assets/img/logo.png" alt="NAVE - Logo"/>
+          <img
+            class="mobile_main_nav__logo mobile_main_nav__logo--side_menu q-py-md"
+            src="~assets/img/logo.png"
+            alt="NAVE - Logo"
+          />
         </q-item-label>
         <EssentialLink v-for="link in linksData" :key="link.title" v-bind="link" />
       </q-list>
@@ -37,55 +47,55 @@ import MainNavigation from 'components/MainNavigation.vue'
 import AppFooter from 'components/Footer.vue'
 
 export default {
-	name: 'MainLayout',
+  name: 'MainLayout',
 
-	components: {
-		EssentialLink,
-		MainNavigation,
-		'app-footer': AppFooter
-	},
+  components: {
+    EssentialLink,
+    MainNavigation,
+    'app-footer': AppFooter
+  },
 
-	data () {
-		return {
-			leftDrawerOpen: false,
-			linksData: [
-				{
-					title: 'Home',
-					icon: 'home',
-					link: '/'
-				},
-				{
-					title: 'Sobre',
-					icon: 'school',
-					link: '/sobre'
-				},
-				{
-					title: 'Cases',
-					icon: 'grade',
-					link: '/cases'
-				},
-				{
-					title: 'Eventos',
-					icon: 'date_range',
-					link: '/eventos'
-				},
-				{
-					title: 'Contato',
-					icon: 'email',
-					link: '/contato'
-				}
-			]
-		}
-	},
+  data () {
+    return {
+      leftDrawerOpen: false,
+      linksData: [
+        {
+          title: 'Home',
+          icon: 'home',
+          link: '/'
+        },
+        {
+          title: 'Sobre',
+          icon: 'school',
+          link: '/sobre'
+        },
+        {
+          title: 'Cases',
+          icon: 'grade',
+          link: '/cases'
+        },
+        {
+          title: 'Eventos',
+          icon: 'date_range',
+          link: '/eventos'
+        },
+        {
+          title: 'Contato',
+          icon: 'email',
+          link: '/contato'
+        }
+      ]
+    }
+  },
 
-	computed: {
-		...mapGetters('categories', ['categories'])
-	},
+  computed: {
+    ...mapGetters('categories', ['categories'])
+  },
 
-	methods: {
-		openLeftDrawer () {
-			this.leftDrawerOpen = true
-		}
-	}
+  methods: {
+    openLeftDrawer () {
+      this.leftDrawerOpen = true
+    }
+  }
 }
 </script>

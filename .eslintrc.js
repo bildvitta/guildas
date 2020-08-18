@@ -56,7 +56,7 @@ module.exports = {
     'quotes': ['error', 'single'],
     'prefer-promise-reject-errors': 'off',
     'space-before-blocks': ['error', 'always'],
-    'indent': ['error', 'tab'],
+    "indent": ["error", 2],
     'block-spacing': ['error', 'always'],
     'semi': [2, 'never'],
     'comma-dangle': ['error', {

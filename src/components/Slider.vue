@@ -24,9 +24,9 @@
 import AnSlider from 'components/AnSlider'
 
 export default {
-	name: 'slider',
+  name: 'slider',
 
-	props: {
+  props: {
   	slider_title: {
     	type: String,
     	required: true
@@ -35,10 +35,10 @@ export default {
     	type: Boolean,
     	default: true
    	}
-	},
+  },
 
-	components: {
-		AnSlider
-	}
+  components: {
+    AnSlider
+  }
 }
 </script>

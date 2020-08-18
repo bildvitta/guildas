@@ -37,17 +37,17 @@ import Slider from 'src/components/Slider'
 import EventCard from 'src/components/EventCard'
 
 export default {
-	name: 'single-event-details',
+  name: 'single-event-details',
 
-	components: {
-		Slider,
-		EventCard
-	},
+  components: {
+    Slider,
+    EventCard
+  },
 
-	mounted () {},
+  mounted () {},
 
-	computed: {
-		...mapGetters('events', ['eventCards'])
-	}
+  computed: {
+    ...mapGetters('events', ['eventCards'])
+  }
 }
 </script>

@@ -22,7 +22,7 @@
 export default {
   name: 'carousel',
 
-  data() {
+  data () {
     return {
       slide: 1,
       autoplay: 3000
@@ -32,7 +32,7 @@ export default {
   methods: {
     toggleAutoplay () {
       this.autoplay = !this.autoplay
-    },
+    }
   }
 }
 </script>

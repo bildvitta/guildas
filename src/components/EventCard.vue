@@ -16,11 +16,11 @@
 
 <script>
 export default {
-	props: {
-		event: {
-			type: Object,
-			required: true
-		}
-	}
+  props: {
+    event: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

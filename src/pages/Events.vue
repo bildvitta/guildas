@@ -13,15 +13,15 @@
     </slider>
 
     <slider slider_title="Categoria 1">
-     <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
-      <event-card :event="event"></event-card>
-     </div>
+      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
+        <event-card :event="event"></event-card>
+      </div>
     </slider>
 
     <slider slider_title="Categoria 2">
-     <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
-      <event-card :event="event"></event-card>
-     </div>
+      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
+        <event-card :event="event"></event-card>
+      </div>
     </slider>
   </div>
 </template>
@@ -34,45 +34,46 @@ import Slider from 'components/Slider.vue'
 import EventCard from 'components/EventCard.vue'
 
 export default {
-	name: 'events-page',
+  name: 'events-page',
 
-	components: {
-		SearchBar,
-		Carousel,
-		Slider,
-		EventCard
-	},
+  components: {
+    SearchBar,
+    Carousel,
+    Slider,
+    EventCard
+  },
 
-	data () {
-		return {
-			slide: 1
-		}
-	},
+  data () {
+    return {
+      slide: 1
+    }
+  },
 
-	computed: {
-		...mapGetters('events', ['eventCards']),
+  computed: {
+    ...mapGetters('events', ['eventCards']),
 
-		setCategorySliderWidth: function () {
-			const cardWidth = 325
+    setCategorySliderWidth: function () {
+      const cardWidth = 325
 
-			let categoryWidth
+      let categoryWidth
 
-			if (this.categoryCards.length * cardWidth > window.innerWidth) {
-				categoryWidth = 'width: ' + this.categoryCards.length * cardWidth + 'px'
-			} else {
-				categoryWidth = 'width: 100%'
-			}
+      if (this.categoryCards.length * cardWidth > window.innerWidth) {
+        categoryWidth =
+          'width: ' + this.categoryCards.length * cardWidth + 'px'
+      } else {
+        categoryWidth = 'width: 100%'
+      }
 
-			return categoryWidth
-		}
-	},
+      return categoryWidth
+    }
+  },
 
-	methods: {
-		checkCategoryCardSize () {
-			const cardWidth = 325
+  methods: {
+    checkCategoryCardSize () {
+      const cardWidth = 325
 
-			return 
-		}
-	}
+      return
+    }
+  }
 }
 </script>
