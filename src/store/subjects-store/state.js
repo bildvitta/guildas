@@ -1,5 +1,5 @@
 const state = {
-    subjects: []
+  subjects: []
 }
 
 export default state

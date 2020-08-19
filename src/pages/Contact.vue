@@ -1,11 +1,7 @@
 <template>
-  <div>
-      Contact Page
-  </div>
+  <div>Contact Page</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>

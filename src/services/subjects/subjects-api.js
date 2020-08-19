@@ -12,5 +12,5 @@ const getSubjects = url => {
 }
 
 export default {
-    getSubjects
+  getSubjects
 }

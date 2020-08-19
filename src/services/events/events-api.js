@@ -12,6 +12,6 @@ const getEvents = url => {
 }
 
 export default {
-    getEvents
+  getEvents
 }
 

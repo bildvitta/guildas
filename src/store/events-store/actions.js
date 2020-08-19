@@ -9,11 +9,10 @@ const actions = {
       return commit('setEvents', eventsStorage)
     }
 
-    let events = await EventsAPI.getEvents('/events')
+    const events = await EventsAPI.getEvents('/events')
+
     commit('setEvents', events)
-
     LocalStorage.set('events', events)
-
   }
 }
 

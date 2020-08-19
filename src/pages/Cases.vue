@@ -1,11 +1,7 @@
 <template>
-  <div>
-      cases
-  </div>
+  <div>cases</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
