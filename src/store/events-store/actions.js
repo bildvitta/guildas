@@ -10,7 +10,6 @@ const actions = {
     }
 
     const events = await EventsAPI.getEvents('/events')
-    console.log(events)
 
     commit('setEvents', events)
     LocalStorage.set('events', events)

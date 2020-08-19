@@ -4,7 +4,6 @@ const getEvents = url => {
   return http
     .get(url)
     .then(response => {
-      console.log(response)
       return response.data
     })
     .catch(error => {
