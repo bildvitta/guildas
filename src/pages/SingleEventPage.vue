@@ -1,8 +1,8 @@
 <template>
-<div>
-  <div class="image-banner"></div>
-  <single-event-details></single-event-details>
-</div>
+  <div>
+    <div class="image-banner"></div>
+    <single-event-details />
+  </div>
 </template>
 
 <script>

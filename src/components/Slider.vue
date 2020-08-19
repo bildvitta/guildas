@@ -1,7 +1,7 @@
 <template>
   <div class="slider slider-margin-handler">
     <div class="row flex justify-between items-center arrows-margin-handler">
-      <h2 class="slider__title">{{ slider_title }}</h2>
+      <h2 class="slider__title">{{ sliderTitle }}</h2>
       <div class="slider__arrows" v-if="useArrows">
         <q-icon
           name="arrow_circle_up"
@@ -27,7 +27,7 @@ export default {
   name: 'slider',
 
   props: {
-  	slider_title: {
+  	sliderTitle: {
     	type: String,
     	required: true
    	},

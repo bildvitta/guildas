@@ -1,10 +1,10 @@
 <template>
   <div class="subject">
     <search-bar/>
-    <h2 class="subject__title">{{ subjects.name }}</h2>
-    <p class="subject__description">{{ subjects.description }}</p>
+    <h2 class="subject__title">{{ subject.name }}</h2>
+    <p class="subject__description">{{ subject.description }}</p>
 
-    <event-card v-for="(event, index) in subjects.events" :key="index" :event="event" />
+    <event-card v-for="(event, index) in subject.events" :key="index" :event="event" />
   </div>
 </template>
 
@@ -21,21 +21,16 @@ export default {
     SearchBar
   },
 
-  data () {
-    return {
-
-    }
-  },
-
   created () {
-    this.setSubjectById(Number(this.$route.params.id))
-  },
-
-  mounted () {
+    this.setSubjectById(this.$route.params.id)
   },
 
   computed: {
-    ...mapGetters('subjects', ['subjects'])
+    ...mapGetters('subjects', ['subjects']),
+
+    subject () {
+      return this.subjects
+    }
   },
 
   methods: {

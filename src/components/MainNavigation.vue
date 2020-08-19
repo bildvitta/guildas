@@ -6,7 +6,7 @@
 
     <ul class="main_nav__link-wrapper">
       <li v-for="link in linksData" :key="link.title" class="main_nav__list-item">
-        <router-link class="main_nav__link" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
+        <router-link class="main_nav__link" :to="link.link" exact>{{ link.title }}</router-link>
       </li>
     </ul>
   </nav>
@@ -20,12 +20,6 @@ export default {
     linksData: {
       required: true,
       type: Array
-    }
-  },
-
-  methods: {
-  	checkPath (path) {
-    	return this.$route.path.split('/')[1] === path.replace('/', '') ? 'active-link' : ''
     }
   }
 }

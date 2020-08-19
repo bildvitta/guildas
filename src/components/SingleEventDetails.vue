@@ -16,13 +16,13 @@
 
     <div class="event-description">
       <h2 class="event-description__heading">Descrição do evento</h2>
-      <p class="event-description__text" v-html="event.descriptionText"></p>
+      <p class="event-description__text" v-html="event.descriptionText" />
     </div>
 
     <div class="event-extra">
-      <slider slider_title="Cê tbm vai curtir">
+      <slider sliderTitle="Cê tbm vai curtir">
         <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
-          <event-card :event="event"></event-card>
+          <event-card :event="event" />
         </div>
       </slider>
     </div>

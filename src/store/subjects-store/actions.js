@@ -17,7 +17,7 @@ const actions = {
 
   async setSubjectById ({ state, commit }, id) {
     if (state.subjects.length > 0) {
-      return state.subjects.find(subject => subject.id === id)
+      commit('setSubjects', state.subjects.find(subject => subject.id === Number(id)))
     }
 
     const subject = await SubjectsAPI.getSubjects(`/subjects/${id}`)

@@ -3,20 +3,20 @@
     <search-bar />
     <carousel />
 
-    <slider slider_title="Fica Ligado!">
-      <div class="slider__item">
-        <subject-card />
+    <slider sliderTitle="Fica Ligado!">
+      <div v-for='(subject, index) in subjects' :key='index' class="slider__item">
+        <subject-card :subject="subject"/>
       </div>
     </slider>
 
-    <slider slider_title="Categoria 1">
-      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
+    <slider sliderTitle="Categoria 1">
+      <div class="slider__item" v-for="(event, index) in events" :key="index">
         <event-card :event="event"/>
       </div>
     </slider>
 
-    <slider slider_title="Categoria 2">
-      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
+    <slider sliderTitle="Categoria 2">
+      <div class="slider__item" v-for="(event, index) in events" :key="index">
         <event-card :event="event"/>
       </div>
     </slider>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import SearchBar from 'components/SearchBar.vue'
 import Carousel from 'components/Carousel.vue'
 import Slider from 'components/Slider.vue'
@@ -48,8 +48,14 @@ export default {
     }
   },
 
+  created () {
+    this.setEvents()
+    this.setSubjects()
+  },
+
   computed: {
-    ...mapGetters('events', ['eventCards']),
+    ...mapGetters('events', ['events']),
+    ...mapGetters('subjects', ['subjects']),
 
     setCategorySliderWidth () {
       const cardWidth = 325
@@ -60,6 +66,9 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    ...mapActions('events', ['setEvents']),
+    ...mapActions('subjects', ['setSubjects'])
+  }
 }
 </script>
