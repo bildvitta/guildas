@@ -1,13 +1,6 @@
-/*
- * This file runs in a Node context (it's NOT transpiled by Babel), so use only
- * the ES6 features that are supported by your Node version. https://node.green/
- */
+const path = require('path')
 
-// Configuration for your app
-// https://quasar.dev/quasar-cli/quasar-conf-js
-/* eslint-env node */
-
-module.exports = function (/* ctx */) {
+module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -56,30 +49,19 @@ module.exports = function (/* ctx */) {
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
-      // transpile: false,
-
-      // Add dependencies for transpiling with Babel (Array of string/regex)
-      // (from node_modules, which are by default not transpiled).
-      // Applies only if "transpile" is set to true.
-      // transpileDependencies: [],
-
-      // rtl: false, // https://quasar.dev/options/rtl-support
-      // preloadChunks: true,
-      // showProgress: false,
-      // gzip: true,
-      // analyze: true,
-
-      // Options below are automatically set depending on the env, set them if you want to override
-      // extractCSS: false,
-
-      // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /node_modules/
-        })
+        }),
+          
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias,
+          
+          helpers: path.resolve(__dirname, './src/helpers')
+        }
       }
     },
 
@@ -107,6 +89,8 @@ module.exports = function (/* ctx */) {
       //
       // components: [],
       // directives: [],
+
+      lang: 'pt-br',
 
       // Quasar plugins
       plugins: [
@@ -202,9 +186,8 @@ module.exports = function (/* ctx */) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (/* cfg */) {
-        // do something with Electron main process Webpack cfg
-        // chainWebpack also available besides this extendWebpack
+      extendWebpack (/*cfg*/) {
+       
       }
     }
   }

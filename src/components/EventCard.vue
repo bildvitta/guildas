@@ -1,14 +1,14 @@
 <template>
   <router-link :to="`/eventos/${ event.id }`">
     <q-card class="event-card" flat>
-      <img class="event-card__image" :src="event.imageUrl" />
+      <img class="event-card__image" :src="eventImage" />
       <q-card-section class="event-card__description">
         <div class="event-card__description-title">{{ event.name }}</div>
-        <div class="event-card__description-date q-mb-sm">{{ event.date | formatDate }}</div>
+        <div class="event-card__description-date q-mb-sm">{{ eventDate }} // {{ eventStartTime }}</div>
         <div class="event-card__description-text">{{ event.description }}</div>
         <div class="event-card__location row items-center q-mt-md">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
-          <p class="event-card__location-address">{{ event.location }}</p>
+          <p class="event-card__location-address">{{ event.place }}</p>
         </div>
       </q-card-section>
     </q-card>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import filters from 'src/mixins/filters/filters'
+import { formatDate, formatTime } from 'src/helpers/filters'
 
 export default {
   props: {
@@ -26,6 +26,19 @@ export default {
     }
   },
 
-  mixins: ['filters']
+  computed: {
+    eventImage () {
+      console.log(process.env.BASE_URL)
+      return `http://104.131.88.91${this.event.avatar.small}`
+    },
+
+    eventDate () {
+      return formatDate(this.event.date)
+    },
+
+    eventStartTime () {
+      return formatTime(this.event.start_time)
+    }
+  }
 }
 </script>
