@@ -28,8 +28,7 @@ export default {
 
   computed: {
     eventImage () {
-      console.log(process.env.BASE_URL)
-      return `http://104.131.88.91${this.event.avatar.small}`
+      return this.event?.avatar?.small
     },
 
     eventDate () {

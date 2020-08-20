@@ -2,27 +2,28 @@ import EventsAPI from 'src/services/events/events-api'
 import { LocalStorage } from 'quasar'
 
 function modifyEventAvatarObject (event) {
-  event.avatar = {
-    small: event.avatar.formats.small.url,
-    medium: event.avatar.formats.medium.url
-  }
+  if (!event.avatar) {
+    event.avatar = {
+      small: 'https://via.placeholder.com/325x182',
+      medium: 'https://via.placeholder.com/750'
+    }
 
-  return event
+    return event
+  } else {
+    event.avatar = {
+      small: process.env.BASE_URL + event.avatar.formats.small.url,
+      medium: process.env.BASE_URL + event.avatar.formats.medium.url
+    }
+
+    return event
+  }
 }
 
 const actions = {
   async setEvents ({ commit }) {
-    const eventsStorage = LocalStorage.getItem('events')
-
-    if (eventsStorage) {
-      return commit('setEvents', eventsStorage)
-    }
-    
     let events = await EventsAPI.getEvents('/events')
-
     for (let event in events) {
       events[event] = modifyEventAvatarObject(events[event])
-      
     }
 
     commit('setEvents', events)
@@ -31,15 +32,14 @@ const actions = {
 
   async setEventById ({ state, commit }, id) {
     if (state.events.length > 0) {
-      commit('setEvents', state.events.find(event => event.id === Number(id)))
+      commit('setEventById', state.events.find(event => event.id === Number(id)))
     }    
 
     let event = await EventsAPI.getEvents(`/events/${id}`)
 
     event = modifyEventAvatarObject(event)
-    console.log(event)
-
-    commit('setEvents', event)
+    
+    commit('setEventById', event)
   }
 }
 

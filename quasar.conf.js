@@ -47,6 +47,10 @@ module.exports = function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        BASE_URL: 'http://104.131.88.91'
+      },
+
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
       extendWebpack (cfg) {

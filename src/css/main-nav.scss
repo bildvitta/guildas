@@ -8,6 +8,10 @@
     display: none;
   }
 
+  &__logo{
+    cursor: pointer;
+  }
+
   &__link-wrapper {
     display: flex;
     align-items: center;
@@ -29,12 +33,12 @@
     }
   }
 
-  .router-link-exact-active {
+  .active-link {
     color: $medium-purple;
     position: relative;
   }
 
-  .router-link-exact-active::after {
+  .active-link::after {
     position: absolute;
     left: 50%;
     margin-top: 2px;

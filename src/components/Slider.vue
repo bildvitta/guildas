@@ -1,6 +1,6 @@
 <template>
   <div class="slider slider-margin-handler">
-    <div class="row flex justify-between items-center arrows-margin-handler">
+    <div class="row flex justify-between items-center arrows-margin-handler q-mb-lg">
       <h2 class="slider__title">{{ sliderTitle }}</h2>
       <div class="slider__arrows" v-if="useArrows">
         <q-icon
