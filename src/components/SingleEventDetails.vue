@@ -5,7 +5,7 @@
         <h1 class="event-details__title">{{ event.name }}</h1>
       </div>
       <div class="col-12 col-sm-6">
-        <p class="event-details__date">{{ eventDate }} // {{ eventTime }}</p>
+        <p class="event-details__date">{{ eventDate }} {{ eventTime }}</p>
         <div class="event-details__location">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
           <p class="event-details__location-address">{{ event.place }}</p>
@@ -52,9 +52,6 @@ export default {
     eventTime () {
       return formatTime(this.event.start_time)
     }
-  },
-
-  mounted () {}
-
+  }
 }
 </script>

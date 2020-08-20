@@ -4,7 +4,11 @@
     <h2 class="subject__title">{{ subject.name }}</h2>
     <p class="subject__description">{{ subject.description }}</p>
 
-    <event-card v-for="(event, index) in subject.events" :key="index" :event="event" />
+    <div class="flex q-mt-xl">
+      <div class="slider__item q-mb-md" v-for="(event, index) in subject.events" :style="marginBottomIsNull" :key="`event-${index}`">
+        <event-card :key="index" :event="event"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,6 +20,12 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'subject-page',
 
+  data () {
+    return {
+      windowSize: ''
+    }
+  },
+
   components: {
     EventCard,
     SearchBar
@@ -23,6 +33,9 @@ export default {
 
   created () {
     this.setSubjectById(this.$route.params.id)
+
+    this.windowSize = window.innerWidth
+    window.addEventListener('resize', this.checkWindowSize)
   },
 
   computed: {
@@ -30,11 +43,23 @@ export default {
 
     subject () {
       return this.subjects
+    },
+
+    marginBottomIsNull () {
+      if (this.$route.name != 'Subject') {
+        return false
+      }
+
+      return this.windowSize < 750 ? 'margin-left: 0; margin-right: 0' : ''
     }
   },
 
   methods: {
-    ...mapActions('subjects', ['setSubjects', 'setSubjectById'])
+    ...mapActions('subjects', ['setSubjects', 'setSubjectById']),
+
+    checkWindowSize () {
+      this.windowSize = window.innerWidth
+    }
   }
 
 }

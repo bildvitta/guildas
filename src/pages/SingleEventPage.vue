@@ -31,14 +31,16 @@ export default {
   },
 
   created () {
-    this.setEventById(this.$route.params.id)
-
     this.setEvents()
   },
 
-  beforeRouteUpdate (to, from, next) {
-    this.setEventById(to.params.id)
-    next()
+  watch: {
+    $route: {
+      handler (newValue) {
+        this.setEventById(newValue.params.id)
+      },
+      immediate: true
+    }
   },
 
   computed: {
