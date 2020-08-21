@@ -9,14 +9,8 @@
       </div>
     </slider>
 
-    <slider sliderTitle="Categoria 1">
-      <div class="slider__item" v-for="(event, index) in events" :key="index">
-        <event-card :event="event"/>
-      </div>
-    </slider>
-
-    <slider sliderTitle="Categoria 2">
-      <div class="slider__item" v-for="(event, index) in events" :key="index">
+    <slider v-for="(category, index) in categories" :key="`category-${index}`" :sliderTitle="category.name">
+      <div class="slider__item" v-for="(event, index) in events" :key="`event-${index}`">
         <event-card :event="event"/>
       </div>
     </slider>
@@ -50,12 +44,14 @@ export default {
 
   created () {
     this.setEvents()
-    this.setSubjects()
+    this.setSubjects(),
+    this.setCategories()
   },
 
   computed: {
     ...mapGetters('events', ['events']),
     ...mapGetters('subjects', ['subjects']),
+    ...mapGetters('categories', ['categories']),
 
     setCategorySliderWidth () {
       const cardWidth = 325
@@ -68,7 +64,8 @@ export default {
 
   methods: {
     ...mapActions('events', ['setEvents']),
-    ...mapActions('subjects', ['setSubjects'])
+    ...mapActions('subjects', ['setSubjects']),
+    ...mapActions('categories', ['setCategories'])
   }
 }
 </script>
