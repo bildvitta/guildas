@@ -116,8 +116,8 @@ export default {
       word-wrap: break-word;
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 3; /* number of lines to show */
-    -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     &__location-icon {

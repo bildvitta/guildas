@@ -24,7 +24,6 @@ module.exports = function (ctx) {
       'carousel.scss',
       'mobile-main-nav.scss',
       'slider.scss',
-      'event-card.scss',
       'footer.scss',
       'image-banner.scss',
       'single-event-details.scss',
