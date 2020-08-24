@@ -81,14 +81,6 @@ export default {
     },
 
     showCategory (categoryName) {
-      // for (let event in this.events) {
-      //   if (this.events[event].category.name === categoryName) {
-      //     return true
-      //   }
-      // }
-
-      // return false
-
       return !!this.events.find(event => event.category.name === categoryName)
     }
   }
