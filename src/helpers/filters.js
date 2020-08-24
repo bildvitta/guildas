@@ -31,13 +31,15 @@ export const modifySubjectEventsAvatarObject = subject => {
   if (subject.events.length) {
     for (const event in subject.events) {
       subject.events[event].avatar = {
-        small: process.env.BASE_URL + subject.events[event]?.avatar?.formats?.small?.url,
-        medium: process.env.BASE_URL + subject.events[event]?.avatar?.formats?.medium?.url
+        small: subject.events[event]?.avatar
+          ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.small?.url 
+          : 'https://via.placeholder.com/325x182',
+        medium: subject.events[event]?.avatar
+          ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.medium?.url
+          : 'https://via.placeholder.com/750x364'
       }
     }
   }
-
-  console.log(subject)
 
   return subject
 }
