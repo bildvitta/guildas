@@ -28,7 +28,7 @@ const actions = {
   },
 
   filterEventsOnSubjects ({ state, commit }, eventName) {
-    if (!eventName) return commit('setSubjects', LocalStorage.getItem('subjects'))
+    if (!eventName) return 
 
     const filteredEvents = []
 

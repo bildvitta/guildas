@@ -1,7 +1,8 @@
 <template>
   <router-link :to="`/assunto/${subject.id}`">
     <q-avatar class="slider__item--rounded">
-      <img class="block" :src="subjectImage" />
+      <!-- <img class="block" :src="subjectImage" /> -->
+      <div class="subject-card__image" :style="'background-image: url(' + subjectImage + ');'"/>
     </q-avatar>
     <p class="text-center block q-mt-sm slider__item__subject">{{ subject.name }}</p>
   </router-link>
@@ -29,5 +30,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .subject-card{
+    &__image {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
 </style>
