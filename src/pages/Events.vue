@@ -9,9 +9,11 @@
       </div>
     </slider>
 
-    <slider v-for="(category, index) in categories" :key="`category-${index}`" :sliderTitle="category.name">
-      <div class="slider__item" v-for="(event, index) in events" :key="`event-${index}`">
-        <event-card :event="event"/>
+    <slider v-for="(category, index) in categories" :key="`category-${index}`" class="events-slider-box" v-show="showCategory(category.name)" :sliderTitle="category.name">
+      <div v-for="(event, index) in events" :key="`event-${index}`">
+        <div class="slider__item" v-if="category.name && filterEvent(event, category.name)">
+          <event-card :event="event"/>
+        </div>
       </div>
     </slider>
   </div>
@@ -65,7 +67,21 @@ export default {
   methods: {
     ...mapActions('events', ['setEvents']),
     ...mapActions('subjects', ['setSubjects']),
-    ...mapActions('categories', ['setCategories'])
+    ...mapActions('categories', ['setCategories']),
+
+    filterEvent (event, category) {
+      return event?.category?.name === category
+    },
+
+    showCategory (categoryName) {
+      for (let event in this.events) {
+        if (this.events[event].category.name === categoryName) {
+          return true
+        }
+      }
+
+      return false
+    }
   }
 }
 </script>

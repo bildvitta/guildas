@@ -1,6 +1,7 @@
 import EventsAPI from 'src/services/events/events-api'
-import { LocalStorage } from 'quasar'
+import { LocalStorage, Dialog } from 'quasar'
 import { modifyEventAvatarObject } from 'src/helpers/filters'
+import { createDialog } from 'src/helpers/dialog'
 
 const actions = {
   async setEvents ({ commit }) {
@@ -23,6 +24,29 @@ const actions = {
     event = modifyEventAvatarObject(event)
     
     commit('setEventById', event)
+  },
+
+  filterEvents ({ state, commit }, eventName) {
+    commit('setEvents', LocalStorage.getItem('events'))
+
+    if (!eventName) return
+
+    const filteredEvents = []
+
+    for (const event in state.events) {
+      if (state.events[event].name.toLowerCase().includes(eventName.toLowerCase())) {
+        filteredEvents.push(state.events[event])
+      }
+    }
+
+    //Nothing found on search
+    if (!filteredEvents.length) {
+      createDialog('Ooops :/', 'A nave só encontrou poeira cósmica.')
+      return commit('setEvents', LocalStorage.getItem('events')) 
+    } 
+
+    //Success on search
+    commit('setEvents', filteredEvents)
   }
 }
 

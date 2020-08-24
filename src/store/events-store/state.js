@@ -1,6 +1,7 @@
 const state = {
   events: [],
-  eventById: {}
+  eventById: {},
+  filteredEvents: []
 }
 
 export default state
