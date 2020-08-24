@@ -72,3 +72,74 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .event-card {
+    width: 325px;
+    background-color: $secondary;
+    transition: all .3s linear;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #fff;
+      box-shadow: 0px 3px 15px $shadow-purple !important;
+    }
+
+    &__image {
+      border-radius: 10px !important;
+      width: 100%;
+      height: 200px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all .3s linear;
+    }
+
+    &:hover &__image {
+      border-radius: 10px 10px 0px 0px !important;
+    }
+
+    &__description-title {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    &__description-date {
+      color: $medium-purple;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &__description-text {
+      color: $medium-gray-text;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    }
+
+    &__location-icon {
+      color: $strong-pink;
+      font-size: 18px;
+    }
+
+    &__location-address {
+      margin-left: 5px;
+      margin-bottom: 0;
+      font-size: 12px;
+      color: $darker-purple-text;
+      max-width: 30ch;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      display: inline-block;
+
+      @media (max-width: 600px) {
+        max-width: 25ch;
+      }
+    }
+  }
+</style>
