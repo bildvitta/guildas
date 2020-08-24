@@ -5,7 +5,7 @@
         <div class="event-card__subjects">
           
         </div>
-        <div class="event-card__image" :style="'background-image: url(' + eventImage + ');'"/>
+        <div class="event-card__image" :style="eventImage"/>
       </div>
       
       <q-card-section class="event-card__description">
@@ -45,7 +45,7 @@ export default {
 
   computed: {
     eventImage () {
-      return this.windowSize < 750 ? this.event?.avatar?.medium : this.event?.avatar?.medium
+      return 'background-image: url(' + this.event?.avatar?.medium + ');'
     },
     
     eventDate () {

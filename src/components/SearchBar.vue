@@ -21,20 +21,22 @@ export default {
     }
   },
 
+  computed: {
+    isEvents () {
+      return this.$route.name === 'Events'
+    }
+  },
+
   methods: {
     ...mapActions('events', ['filterEvents']),
     ...mapActions('subjects', ['filterEventsOnSubjects']),
 
   	searchEvents () {
-      if (this.$route.name === 'Events') {
-        this.filterEvents(this.search, this.$route.name)
-      } else if (this.$route.name === 'Subject') {
-        this.filterEventsOnSubjects(this.search, this.$route.name)
-      }
+      this.isEvents && this.filterEvents(this.search, this.$route.name) || this.filterEventsOnSubjects(this.search, this.$route.name)
     
       const firstEventSlider = document.querySelector('.events-slider-box')
 
-      if  (firstEventSlider) {
+      if (firstEventSlider) {
         const heightToScroll = firstEventSlider.scrollHeight + firstEventSlider.clientHeight
         scroll({
           top: heightToScroll,

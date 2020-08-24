@@ -4,7 +4,7 @@
     <single-event-details :event='eventById' class="q-mb-xl"/>
 
     <div class="event-extra q-mt-xl">
-      <slider sliderTitle="Cê tbm vai curtir">
+      <slider sliderTitle="Cê tbm vai curtir" sliderSlug="ce-tbm-vai-curtir">
         <div class="slider__item" v-for="(event, index) in events" :key="index">
           <event-card :event="event" />
         </div>

@@ -4,12 +4,12 @@
       <h2 class="slider__title">{{ sliderTitle }}</h2>
       <div class="slider__arrows" v-if="useArrows">
         <q-icon
-          @click="scrollLeft($event)"
+          @click="scrollHorizontal('left')"
           name="arrow_circle_up"
           class="slider__arrows--prev-arrow rotate-270 cursor-pointer"
         />
         <q-icon
-          @click="scrollRight($event)"
+          @click="scrollHorizontal('right')"
           name="arrow_circle_up"
           class="slider__arrows--next-arrow rotate-90 cursor-pointer q-ml-sm"
         />
@@ -60,16 +60,11 @@ export default {
   },
 
   methods: {
-    scrollLeft () {
-      this.sliderElement.scrollTo({
-        left: this.sliderElement.scrollLeft - 370,
-        behavior: 'smooth'
-      })
-    },
+    scrollHorizontal (direction) {
+      const scrollValue = direction === 'left' ? -370 : 370
 
-    scrollRight () {
       this.sliderElement.scrollTo({
-        left: this.sliderElement.scrollLeft + 370,
+        left: this.sliderElement.scrollLeft + scrollValue,
         behavior: 'smooth'
       })
     }

@@ -1,7 +1,7 @@
 <template>
   <router-link :to="`/assunto/${subject.id}`">
     <q-avatar class="subject-card slider__item--rounded">
-      <div class="subject-card__image" :style="'background-image: url(' + subjectImage + ');'"/>
+      <div class="subject-card__image" :style="subjectImage"/>
     </q-avatar>
     <p class="text-center block q-mt-sm slider__item__subject">{{ subject.name }}</p>
   </router-link>
@@ -23,7 +23,7 @@ export default {
 
   computed: {
     subjectImage () {
-      return this.subject.image.small
+      return 'background-image: url(' + this.subject.image.small + ');'
     }
   }
 }
