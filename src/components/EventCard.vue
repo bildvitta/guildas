@@ -5,7 +5,7 @@
         <div class="event-card__subjects">
           
         </div>
-        <img class="event-card__image full-width" :src="eventImage" />
+        <div class="event-card__image" :style="'background-image: url(' + eventImage + ');'"/>
       </div>
       
       <q-card-section class="event-card__description">
