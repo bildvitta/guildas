@@ -28,11 +28,11 @@ export default {
   },
 
   methods: {
-    ...mapActions('events', ['filterEvents']),
+    ...mapActions('events', ['setEvents']),
     ...mapActions('subjects', ['filterEventsOnSubjects']),
 
   	searchEvents () {
-      this.isEvents && this.filterEvents(this.search, this.$route.name) || this.filterEventsOnSubjects(this.search, this.$route.name)
+      this.isEvents && this.setEvents(this.search, this.$route.name) || this.filterEventsOnSubjects(this.search, this.$route.name)
     
       const firstEventSlider = document.querySelector('.events-slider-box')
 
