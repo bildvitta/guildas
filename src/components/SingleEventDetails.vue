@@ -38,10 +38,6 @@ export default {
     }
   },
 
-  components: {
-    // VueMarkdown
-  },
-
   computed: {
     eventDate () {
       return formatDate(this.event.date)

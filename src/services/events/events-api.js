@@ -1,10 +1,8 @@
 import http from '../httpconfig'
 
-const getEvents = (url, nameContains) => {
-  nameContains = nameContains || ''
-
+const getEvents = (url, query = '') => {
   return http
-    .get(url, { query: { name_contains: nameContains } })
+    .get(url, { params: { ...query } })
     .then(response => {
       return response.data
     })
