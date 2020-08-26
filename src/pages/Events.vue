@@ -81,7 +81,7 @@ export default {
     },
 
     showCategory (categoryName) {
-      return !!this.events.find(event => event.category.name === categoryName)
+      return this.events && !!this.events.find(event => event.category.name === categoryName)
     }
   }
 }

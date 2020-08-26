@@ -28,12 +28,18 @@ export default {
   },
 
   methods: {
-    ...mapActions('events', ['filterEvents']),
+    ...mapActions('events', ['setEvents']),
     ...mapActions('subjects', ['filterEventsOnSubjects']),
 
   	searchEvents () {
-      this.isEvents && this.filterEvents(this.search, this.$route.name) || this.filterEventsOnSubjects(this.search, this.$route.name)
+      this.$router.push({ query: { search: this.search } }) 
+
+      this.isEvents && this.setEvents(this.$route.query) || this.filterEventsOnSubjects(this.$route.query)
     
+      this.slideToBottom()
+    },
+
+    slideToBottom () {
       const firstEventSlider = document.querySelector('.events-slider-box')
 
       if (firstEventSlider) {

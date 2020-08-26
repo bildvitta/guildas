@@ -45,7 +45,7 @@ export default {
 
   computed: {
     eventImage () {
-      return 'background-image: url(' + this.event?.avatar?.medium + ');'
+      return `background-image: url( ${this.event?.avatar?.medium});`
     },
     
     eventDate () {

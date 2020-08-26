@@ -23,7 +23,7 @@ export default {
 
   computed: {
     subjectImage () {
-      return 'background-image: url(' + this.subject.image.small + ');'
+      return `background-image: url(${this.subject.image.small});`
     }
   }
 }
