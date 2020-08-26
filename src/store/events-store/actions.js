@@ -1,11 +1,10 @@
-import eventsAPI from 'src/services/events/events-api'
+import serviceAPI from 'src/services/services'
 import { LocalStorage } from 'quasar'
 import { modifyEventAvatarObject } from 'src/helpers/filters'
-import { createDialog } from 'src/helpers/dialog'
 
 const actions = {
   async setEvents ({ commit }, query) {
-    const events = await eventsAPI.getEvents('/events', query)
+    const events = await serviceAPI.getList('/events', query)
 
     for (const event in events) {
       events[event] = modifyEventAvatarObject(events[event])
@@ -20,11 +19,9 @@ const actions = {
       commit('setEventById', state.events.find(event => event.id === Number(id)))
     }    
 
-    let event = await eventsAPI.getEvents(`/events/${id}`)
+    let event = await serviceAPI.getList(`/events/${id}`)
 
-    event = modifyEventAvatarObject(event)
-    
-    commit('setEventById', event)
+    commit('setEventById', modifyEventAvatarObject(event))
   }
 }
 

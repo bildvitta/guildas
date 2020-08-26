@@ -1,11 +1,11 @@
 import { LocalStorage } from 'quasar'
-import subjectsAPI from 'src/services/subjects/subjects-api'
+import servicesAPI from 'src/services/services'
 import { modifySubjectImagesObject } from 'src/helpers/filters'
 import { createDialog } from 'src/helpers/dialog'
 
 const actions = {
   async setSubjects ({ commit }) {
-    const subjects = await subjectsAPI.getSubjects('/subjects')
+    const subjects = await servicesAPI.getList('/subjects')
 
     for (const subject in subjects) {
       subjects[subject] = modifySubjectImagesObject(subjects[subject])
@@ -17,14 +17,13 @@ const actions = {
 
   async setSubjectById ({ state, commit }, id) {
     if (state.subjects.length > 0) {
-      commit('setSubjects', state.subjects.find(subject => subject.id === Number(id)))
+      return commit('setSubjects', state.subjects.find(subject => subject.id === Number(id)))
     }
+    console.log('teste')
 
-    let subject = await subjectsAPI.getSubjects(`/subjects/${id}`)
+    let subject = await servicesAPI.getList(`/subjects/${id}`)
 
-    subject = modifySubjectImagesObject(subject)
-
-    commit('setSubjects', subject)
+    commit('setSubjects', modifySubjectImagesObject(subject))
   },
 
   filterEventsOnSubjects ({ state, commit }, eventName) {
