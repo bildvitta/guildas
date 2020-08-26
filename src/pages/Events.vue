@@ -3,7 +3,7 @@
     <search-bar />
     <carousel />
 
-    <slider sliderTitle="Fica Ligado!">
+    <slider sliderTitle="Fica Ligado!" class="subjects-slider-box">
       <div v-for='(subject, index) in subjects' :key='index' class="slider__item">
         <subject-card :subject="subject"/>
       </div>

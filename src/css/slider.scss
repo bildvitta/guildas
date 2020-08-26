@@ -58,3 +58,24 @@
     }
   }
 }
+
+.slider-margin-left-handler {
+  margin-left: -20px;
+
+  @media (min-width: 1500px) {
+    margin-right: -150px;
+  }
+}
+
+.slider-title-margin-left-handler {
+  margin-left: 20px;
+
+  @media (min-width: 1500px) {
+    margin-right: 150px;
+  }
+}
+
+.events-slider-box .an-slider__content > div:first-of-type { margin-left: 20px; }
+
+.subjects-slider-box .an-slider__content .slider__item:first-of-type { margin-left: 20px; }
+

@@ -1,7 +1,7 @@
 <template>
-  <div class="slider slider-margin-handler">
+  <div class="slider slider-margin-handler slider-margin-left-handler">
     <div class="row flex justify-between items-center arrows-margin-handler q-mb-lg">
-      <h2 class="slider__title">{{ sliderTitle }}</h2>
+      <h2 class="slider__title slider-title-margin-left-handler">{{ sliderTitle }}</h2>
       <div class="slider__arrows" v-if="!hideArrows">
         <q-icon
           @click="scrollHorizontal('left')"

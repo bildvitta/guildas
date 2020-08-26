@@ -17,7 +17,6 @@
     <div class="event-description">
       <h2 class="event-description__heading">Descrição do evento</h2>
       <p class="event-description__text" v-html="event.description" />
-      <!-- <vue-markdown>this is the default slot</vue-markdown> -->
     </div>
   </div>
 </template>

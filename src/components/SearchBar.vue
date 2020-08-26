@@ -32,7 +32,7 @@ export default {
     ...mapActions('subjects', ['filterEventsOnSubjects']),
 
   	searchEvents () {
-      this.$router.push({ query: { search: this.search } }) 
+      this.$router.push({ query: { name_contains: this.search } }) 
 
       this.isEvents && this.setEvents(this.$route.query) || this.filterEventsOnSubjects(this.$route.query)
     
