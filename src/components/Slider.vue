@@ -2,7 +2,7 @@
   <div class="slider slider-margin-handler">
     <div class="row flex justify-between items-center arrows-margin-handler q-mb-lg">
       <h2 class="slider__title">{{ sliderTitle }}</h2>
-      <div class="slider__arrows" :style='hideArrows' v-if="useArrows">
+      <div class="slider__arrows" v-if="!hideArrows">
         <q-icon
           @click="scrollHorizontal('left')"
           name="arrow_circle_up"
@@ -61,7 +61,7 @@ export default {
 
   computed: {
     hideArrows () {
-      return this.$q.screen.xs && 'display: none;'
+      return this.useArrows && this.$q.screen.xs
     }
   },
 
