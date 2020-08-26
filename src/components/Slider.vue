@@ -61,7 +61,7 @@ export default {
 
   computed: {
     hideArrows () {
-      return this.$q.platform.is.mobile && 'display: none;'
+      return this.$q.screen.xs && 'display: none;'
     }
   },
 
