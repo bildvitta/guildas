@@ -7,9 +7,7 @@
   box-shadow: 0px 3px 15px $shadow-purple;
   border-bottom: 2px solid $shadow-purple;
 
-  @media (min-width: 769px) {
-    display: none;
-  }
+  @media (min-width: 769px) { display: none; }
 
   .container {
     display: flex;
@@ -17,13 +15,9 @@
     justify-content: space-between;
   }
 
-  &__logo {
-    display: block;
-  }
+  &__logo { display: block; }
 
-  &__logo--side_menu {
-    margin: 0 auto;
-  }
+  &__logo--side_menu { margin: 0 auto; }
 
   .q-icon {
     color: black;
@@ -32,9 +26,8 @@
 }
 
 .q-drawer-container {
-  @media (min-width: 769px) {
-    display: none;
-  }
+  
+  @media (min-width: 769px) { display: none; }
 
   .q-item__label {
     font-family: "Press Start 2P", cursive;

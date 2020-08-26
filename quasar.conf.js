@@ -19,15 +19,7 @@ module.exports = function (ctx) {
     css: [
       'app.scss',
       'base.scss',
-      'main-nav.scss',
-      'searchbar.scss',
-      'carousel.scss',
-      'mobile-main-nav.scss',
-      'slider.scss',
-      'footer.scss',
-      'image-banner.scss',
-      'single-event-details.scss',
-      'subject.scss'
+      'mobile-main-nav.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras

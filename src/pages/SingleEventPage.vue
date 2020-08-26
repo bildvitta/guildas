@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="image-banner" :style="'background-image:url(' + eventImage + ');'"></div>
+    <div class="image-banner" :style="eventImage"></div>
     <single-event-details :event='eventById' class="q-mb-xl"/>
 
     <div class="event-extra q-mt-xl">
@@ -47,7 +47,7 @@ export default {
     ...mapGetters('events', ['events', 'eventById']),
 
     eventImage () {
-      return this.eventById?.avatar?.medium
+      return 'background-image:url(' + this.eventById?.avatar?.medium + ');'
     }
   },
 
@@ -56,3 +56,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .image-banner {
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+</style>

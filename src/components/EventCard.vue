@@ -40,12 +40,12 @@ export default {
 
   created () {
     this.windowSize = window.innerWidth
-    window.addEventListener('resize', this.checkWindowSize)
+    window.addEventListener('resize', this.setWindowSize)
   },
 
   computed: {
     eventImage () {
-      return `background-image: url( ${this.event?.avatar?.medium});`
+      return `background-image: url(${this.event?.avatar?.medium});`
     },
     
     eventDate () {
@@ -61,12 +61,12 @@ export default {
         return false
       }
 
-      return this.windowSize < 750 ? 'width: 100%;' : ''
+      return this.windowSize < 750 && 'width: 100%;'
     }
   },
 
   methods: {
-    checkWindowSize () {
+    setWindowSize () {
       this.windowSize = window.innerWidth
     }
   }
@@ -95,9 +95,7 @@ export default {
       transition: all .3s linear;
     }
 
-    &:hover &__image {
-      border-radius: 10px 10px 0px 0px !important;
-    }
+    &:hover &__image { border-radius: 10px 10px 0px 0px !important; }
 
     &__description-title {
       font-weight: 700;
@@ -137,9 +135,7 @@ export default {
       overflow: hidden;
       display: inline-block;
 
-      @media (max-width: 600px) {
-        max-width: 25ch;
-      }
+      @media (max-width: 600px) { max-width: 25ch; }
     }
   }
 </style>

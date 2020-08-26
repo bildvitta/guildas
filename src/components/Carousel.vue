@@ -36,3 +36,26 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .q-carousel {
+    overflow: initial;
+    margin-bottom: 100px;
+
+    @media (max-width: 515px) { display: none; }
+
+    &__navigation {
+      position: absolute;
+      bottom: -50px;
+    }
+
+    &__navigation .q-icon {
+      color: $light-gray-text;
+      font-size: 10px;
+    }
+
+    &__navigation-icon--active .q-icon { color: $strong-pink; }
+
+    .q-panel { border-radius: 10px; }
+  }
+</style>
