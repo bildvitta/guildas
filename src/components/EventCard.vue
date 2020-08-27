@@ -1,6 +1,6 @@
 <template>
   <router-link :to="`/eventos/${ event.id }`">
-    <q-card class="event-card" :style="isFullWidth" flat>
+    <q-card class="event-card q-mr-md" :style="isFullWidth" flat>
       <div class="relative-position">
         <div class="event-card__subjects">
           

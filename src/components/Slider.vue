@@ -101,10 +101,6 @@ export default {
       }
     }
 
-    &__item:last-of-type {
-      margin-right: 20px;
-    }
-
     &__item--rounded {
       width: 150px;
       height: 150px;
