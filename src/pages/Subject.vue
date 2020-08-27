@@ -75,6 +75,8 @@ export default {
       margin-bottom: 10px;
     }
 
-    &__description { max-width: 650px; }
+    &__description { 
+      max-width: 650px;
+    }
   }
 </style>

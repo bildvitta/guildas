@@ -95,7 +95,9 @@ export default {
       transition: all .3s linear;
     }
 
-    &:hover &__image { border-radius: 10px 10px 0px 0px !important; }
+    &:hover &__image { 
+      border-radius: 10px 10px 0px 0px !important;
+    }
 
     &__description-title {
       font-weight: 700;
@@ -135,7 +137,9 @@ export default {
       overflow: hidden;
       display: inline-block;
 
-      @media (max-width: 600px) { max-width: 25ch; }
+      @media (max-width: 600px) { 
+        max-width: 25ch; 
+      }
     }
   }
 </style>

@@ -42,7 +42,9 @@ export default {
     overflow: initial;
     margin-bottom: 100px;
 
-    @media (max-width: 515px) { display: none; }
+    @media (max-width: 515px) { 
+      display: none;
+    }
 
     &__navigation {
       position: absolute;
@@ -54,8 +56,12 @@ export default {
       font-size: 10px;
     }
 
-    &__navigation-icon--active .q-icon { color: $strong-pink; }
+    &__navigation-icon--active .q-icon { 
+      color: $strong-pink; 
+    }
 
-    .q-panel { border-radius: 10px; }
+    .q-panel { 
+      border-radius: 10px;
+    }
   }
 </style>

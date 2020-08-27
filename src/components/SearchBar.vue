@@ -64,13 +64,19 @@ export default {
     .q-input {
       padding: 0 20px;
 
-      .q-field__native { color: $medium-gray-text; }
+      .q-field__native { 
+        color: $medium-gray-text;
+      }
     }
 
-    .q-icon { color: $strong-pink; }
+    .q-icon { 
+      color: $strong-pink;
+    }
 
     .q-field__marginal,
-    .q-field__control { height: auto; }
+    .q-field__control { 
+      height: auto;
+    }
 
     .q-btn {
       background-color: $medium-purple;
@@ -86,6 +92,8 @@ export default {
       box-shadow: none;
     }
 
-    .q-btn__wrapper { box-shadow: none; }
+    .q-btn__wrapper { 
+      box-shadow: none;
+    }
   }
 </style>

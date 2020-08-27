@@ -40,9 +40,13 @@ export default {
     justify-content: space-between;
     margin-bottom: 50px;
     
-    @media (max-width: 768px) { display: none; }
+    @media (max-width: 768px) { 
+      display: none;
+    }
 
-    &__logo{ cursor: pointer; }
+    &__logo{
+      cursor: pointer;
+    }
 
     &__link-wrapper {
       display: flex;
@@ -50,7 +54,9 @@ export default {
       justify-content: flex-start;
     }
 
-    &__list-item + &__list-item { margin-left: 60px; }
+    &__list-item + &__list-item { 
+      margin-left: 60px;
+    }
 
     &__link {
       color: #1b162d;
@@ -58,7 +64,9 @@ export default {
       font-family: "Press Start 2P", cursive;
       font-size: 10px;
 
-      &:hover { color: $medium-purple; }
+      &:hover {
+        color: $medium-purple;
+      }
     }
 
     .active-link {
@@ -85,7 +93,9 @@ export default {
   }
 
   @keyframes animateActiveLink {
-    0% { opacity: 0; }
+    0% { 
+      opacity: 0;
+    }
 
     100% {
       opacity: 1;

@@ -151,7 +151,11 @@ export default {
     }
   }
 
-  .events-slider-box .an-slider__content > div:first-of-type { margin-left: 20px; }
+  .events-slider-box .an-slider__content > div:first-of-type { 
+    margin-left: 20px;
+  }
 
-  .subjects-slider-box .an-slider__content .slider__item:first-of-type { margin-left: 20px; }
+  .subjects-slider-box .an-slider__content .slider__item:first-of-type {
+    margin-left: 20px; 
+  }
 </style>

@@ -51,7 +51,9 @@ export default {
 <style lang="scss">
   .event-details {
     
-    &__title-box { margin-top: 50px; }
+    &__title-box { 
+      margin-top: 50px;
+    }
 
     &__title {
       font-family: "Press Start 2P", cursive;
@@ -59,9 +61,13 @@ export default {
       color: $strong-pink;
       line-height: 1.3;
 
-      @media (max-width: 900px) { font-size: 30px; }
+      @media (max-width: 900px) { 
+        font-size: 30px;
+      }
 
-      @media (max-width: 700px) { font-size: 24px; }
+      @media (max-width: 700px) { 
+        font-size: 24px;
+      }
     }
 
     &__date {
@@ -89,7 +95,9 @@ export default {
       color: $darker-purple-text;
       max-width: 52%;
 
-      @media (max-width: 600px) { max-width: 100%; }
+      @media (max-width: 600px) {
+        max-width: 100%;
+      }
     }
 
     &__btn {
@@ -115,7 +123,9 @@ export default {
       font-family: 'Press Start 2P', cursive;
       font-size: 16px;
 
-      @media (max-width: 600px) { font-size: 14px; }
+      @media (max-width: 600px) { 
+        font-size: 14px;
+      }
     }
   }
 </style>
