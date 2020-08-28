@@ -3,7 +3,7 @@
     <q-avatar class="subject-card slider__item--rounded">
       <div class="subject-card__image" :style="subjectImage"/>
     </q-avatar>
-    <p class="text-center block q-mt-sm slider__item__subject">{{ subject.name }}</p>
+    <p class="text-center block q-mt-sm slider__item__subject text-darker-purple">{{ subject.name }}</p>
   </router-link>
 </template>
 

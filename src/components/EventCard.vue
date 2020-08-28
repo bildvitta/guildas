@@ -14,7 +14,7 @@
         <div class="event-card__description-text">{{ event.description }}</div>
         <div class="event-card__location row items-center q-mt-md">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
-          <p class="event-card__location-address">{{ event.place }}</p>
+          <p class="event-card__location-address text-darker-purple">{{ event.place }}</p>
         </div>
       </q-card-section>
     </q-card>
@@ -129,7 +129,6 @@ export default {
       margin-left: 5px;
       margin-bottom: 0;
       font-size: 12px;
-      color: $darker-purple-text;
       max-width: 30ch;
       white-space: nowrap;
       text-overflow: ellipsis;

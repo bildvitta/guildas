@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer flex flex-center text-darker-purple">
     <p class="flex items-center">
       Feito com <q-icon class="footer__icon" name="favorite_border"></q-icon>pela 
       <img class="footer__logo" src="~assets/img/logo.png" />
@@ -15,11 +15,7 @@ export default {
 
 <style lang="scss">
   .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 12px;
-    color: $darker-purple-text;
 
     &__icon {
       font-size: 16px;

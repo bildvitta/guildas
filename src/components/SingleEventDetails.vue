@@ -8,7 +8,7 @@
         <p class="event-details__date">{{ eventDate }} {{ eventTime }}</p>
         <div class="event-details__location">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
-          <p class="event-details__location-address">{{ event.place }}</p>
+          <p class="event-details__location-address text-darker-purple">{{ event.place }}</p>
         </div>
         <q-btn class="event-details__btn" flat label="Simbora!" />
       </div>
@@ -92,7 +92,6 @@ export default {
       margin-left: 5px;
       margin-bottom: 0;
       font-size: 12px;
-      color: $darker-purple-text;
       max-width: 52%;
 
       @media (max-width: 600px) {

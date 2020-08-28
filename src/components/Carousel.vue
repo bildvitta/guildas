@@ -1,5 +1,6 @@
 <template>
   <q-carousel
+    :class="hideCarousel"
     animated
     v-model="slide"
     navigation
@@ -29,6 +30,12 @@ export default {
     }
   },
 
+  computed: {
+    hideCarousel () {
+      return this.$q.screen.xs && 'hidden'
+    }
+  },
+
   methods: {
     toggleAutoplay () {
       this.autoplay = !this.autoplay
@@ -41,10 +48,6 @@ export default {
   .q-carousel {
     overflow: initial;
     margin-bottom: 100px;
-
-    @media (max-width: 515px) { 
-      display: none;
-    }
 
     &__navigation {
       position: absolute;

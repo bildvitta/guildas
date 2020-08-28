@@ -47,7 +47,7 @@ export default {
     ...mapGetters('events', ['events', 'eventById']),
 
     eventImage () {
-      return 'background-image:url(' + this.eventById?.avatar?.medium + ');'
+      return `background-image:url( ${this.eventById?.avatar?.medium} );`
     }
   },
 

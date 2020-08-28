@@ -109,10 +109,6 @@ export default {
     &__item + &__item {
       margin-left: 15px;
     }
-
-    &__item__subject {
-      color: $darker-purple-text;
-    }
   }
 
   .slider-margin-handler {
@@ -124,10 +120,6 @@ export default {
 
     .arrows-margin-handler {
       margin-right: 20px;
-
-      @media (max-width: 500px) {
-        margin-right: 20px;
-      }
 
       @media (min-width: 1500px) {
         margin-right: 150px;

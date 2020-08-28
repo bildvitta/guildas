@@ -1,5 +1,5 @@
 <template>
-  <nav id="header" class="main_nav">
+  <nav id="header" class="main_nav" :class="hideMainNav">
     <img @click="redirectToHome" class="main_nav__logo" src="~assets/img/logo.png" alt="NAVE - Logo"/>
 
     <ul class="main_nav__link-wrapper">
@@ -21,6 +21,12 @@ export default {
     }
   },
 
+  computed: {
+    hideMainNav () {
+      return this.$q.screen.lt.md && 'hidden'
+    }
+  },
+
   methods: {
     redirectToHome () {
       this.$router.push('/')
@@ -39,12 +45,8 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
-    
-    @media (max-width: 768px) { 
-      display: none;
-    }
 
-    &__logo{
+    &__logo {
       cursor: pointer;
     }
 
