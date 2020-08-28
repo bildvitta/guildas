@@ -64,3 +64,19 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+  .subject {
+
+    &__title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &__description { 
+      max-width: 650px;
+    }
+  }
+</style>

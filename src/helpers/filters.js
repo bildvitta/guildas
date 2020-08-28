@@ -5,7 +5,7 @@ export const formatDate = dateToFormat => {
 }
 
 export const formatTime = timeToFormat => {
-  return timeToFormat && `  // ${timeToFormat.split(':')[0]}:${timeToFormat.split(':')[1]}`
+  return timeToFormat ? ` // ${timeToFormat.split(':')[0]}:${timeToFormat.split(':')[1]}` : 'Data não especificada'
 }
 
 export const modifySubjectImagesObject = subject => {

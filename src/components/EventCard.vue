@@ -1,6 +1,6 @@
 <template>
   <router-link :to="`/eventos/${ event.id }`">
-    <q-card class="event-card" :style="isFullWidth" flat>
+    <q-card class="event-card q-mr-md" :style="isFullWidth" flat>
       <div class="relative-position">
         <div class="event-card__subjects">
           
@@ -14,7 +14,7 @@
         <div class="event-card__description-text">{{ event.description }}</div>
         <div class="event-card__location row items-center q-mt-md">
           <q-icon name="location_on" class="event-card__location-icon"></q-icon>
-          <p class="event-card__location-address">{{ event.place }}</p>
+          <p class="event-card__location-address text-darker-purple">{{ event.place }}</p>
         </div>
       </q-card-section>
     </q-card>
@@ -40,12 +40,12 @@ export default {
 
   created () {
     this.windowSize = window.innerWidth
-    window.addEventListener('resize', this.checkWindowSize)
+    window.addEventListener('resize', this.setWindowSize)
   },
 
   computed: {
     eventImage () {
-      return `background-image: url( ${this.event?.avatar?.medium});`
+      return `background-image: url(${this.event?.avatar?.medium});`
     },
     
     eventDate () {
@@ -61,12 +61,12 @@ export default {
         return false
       }
 
-      return this.windowSize < 750 ? 'width: 100%;' : ''
+      return this.windowSize < 750 && 'width: 100%;'
     }
   },
 
   methods: {
-    checkWindowSize () {
+    setWindowSize () {
       this.windowSize = window.innerWidth
     }
   }
@@ -95,7 +95,7 @@ export default {
       transition: all .3s linear;
     }
 
-    &:hover &__image {
+    &:hover &__image { 
       border-radius: 10px 10px 0px 0px !important;
     }
 
@@ -129,7 +129,6 @@ export default {
       margin-left: 5px;
       margin-bottom: 0;
       font-size: 12px;
-      color: $darker-purple-text;
       max-width: 30ch;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -137,8 +136,8 @@ export default {
       overflow: hidden;
       display: inline-block;
 
-      @media (max-width: 600px) {
-        max-width: 25ch;
+      @media (max-width: 600px) { 
+        max-width: 25ch; 
       }
     }
   }
