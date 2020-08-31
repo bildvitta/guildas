@@ -1,5 +1,5 @@
 <template>
-  <div>About page</div>
+  <q-page>About page</q-page>
 </template>
 
 <script>

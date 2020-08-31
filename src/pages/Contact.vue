@@ -1,5 +1,5 @@
 <template>
-  <div>Contact Page</div>
+  <q-page>Contact Page</q-page>
 </template>
 
 <script>

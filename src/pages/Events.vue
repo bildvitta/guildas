@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <q-page>
     <search-bar />
     <carousel />
 
@@ -23,7 +23,7 @@
         </div>
       </div>
     </slider>
-  </div>
+  </q-page>
 </template>
 
 <script>
