@@ -1,10 +1,10 @@
 <template>
-  <nav id="header" class="main_nav" :class="hideMainNav">
-    <img @click="redirectToHome" class="main_nav__logo" src="~assets/img/logo.png" alt="NAVE - Logo"/>
+  <nav id="header" class="main_nav flex items-center justify-between" :class="hideMainNav">
+    <img @click="redirectToHome" class="main_nav__logo cursor-pointer" src="~assets/img/logo.png" alt="NAVE - Logo"/>
 
-    <ul class="main_nav__link-wrapper">
+    <ul class="main_nav__link-wrapper flex items-center">
       <li v-for="link in linksData" :key="link.title" class="main_nav__list-item">
-        <router-link class="main_nav__link" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
+        <router-link class="main_nav__link text-darker-purple" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
       </li>
     </ul>
   </nav>
@@ -41,38 +41,24 @@ export default {
 
 <style lang="scss">
   .main_nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 50px;
-
-    &__logo {
-      cursor: pointer;
-    }
-
-    &__link-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
 
     &__list-item + &__list-item { 
       margin-left: 60px;
     }
 
     &__link {
-      color: #1b162d;
       transition: color 0.2s linear;
       font-family: "Press Start 2P", cursive;
       font-size: 10px;
 
       &:hover {
-        color: $medium-purple;
+        color: $text-medium-purple;
       }
     }
 
     .active-link {
-      color: $medium-purple;
+      color: $text-medium-purple;
       position: relative;
     }
 
@@ -85,7 +71,7 @@ export default {
       width: 6px;
       height: 6px;
       border-radius: 100%;
-      background-color: $medium-purple;
+      background-color: $bg-medium-purple;
       display: block;
       animation-name: animateActiveLink;
       animation-duration: 1s;

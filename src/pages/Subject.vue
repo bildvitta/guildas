@@ -1,7 +1,7 @@
 <template>
   <div class="subject">
     <search-bar/>
-    <h2 class="subject__title">{{ subject.name }}</h2>
+    <h2 class="subject__title text-uppercase q-mb-md">{{ subject.name }}</h2>
     <p class="subject__description">{{ subject.description }}</p>
 
     <div class="flex q-mt-xl">
@@ -71,8 +71,6 @@ export default {
     &__title {
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
     }
 
     &__description { 

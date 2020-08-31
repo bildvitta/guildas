@@ -9,6 +9,7 @@
     arrows
     transition-prev="fade"
     transition-next="fade"
+    control-color="light-gray"
     @mouseenter="toggleAutoplay"
     @mouseleave="toggleAutoplay"
   >
@@ -55,12 +56,11 @@ export default {
     }
 
     &__navigation .q-icon {
-      color: $light-gray-text;
       font-size: 10px;
     }
 
     &__navigation-icon--active .q-icon { 
-      color: $strong-pink; 
+      color: $text-strong-pink; 
     }
 
     .q-panel { 

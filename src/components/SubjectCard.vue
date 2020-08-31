@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss">
   .subject-card{
-    box-shadow: 0px 3px 9px 3px $shadow-purple !important;
+    box-shadow: $shadow-purple;
     transition: all .3s linear;
 
     &__image {
