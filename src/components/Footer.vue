@@ -1,8 +1,8 @@
 <template>
   <footer class="footer flex flex-center text-darker-purple">
     <p class="flex items-center">
-      Feito com <q-icon class="footer__icon" name="favorite_border"></q-icon>pela 
-      <img class="footer__logo" src="~assets/img/logo.png" />
+      Feito com <q-icon class="footer__icon q-mx-xs" name="favorite_border"></q-icon>pela 
+      <img class="footer__logo q-ml-sm" src="~assets/img/logo.png" />
     </p>
   </footer>
 </template>
@@ -19,13 +19,11 @@ export default {
 
     &__icon {
       font-size: 16px;
-      margin: 0 4px;
     }
 
     &__logo {
       max-width: 50px;
       display: inline-block;
-      margin-left: 6px;
     }
   }
 </style>

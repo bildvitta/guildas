@@ -4,8 +4,8 @@
   left: 0;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0px 3px 15px $shadow-purple;
-  border-bottom: 2px solid $shadow-purple;
+  box-shadow: $shadow-purple;
+  border-bottom: $border-purple;
   display: none;
 
   .container {

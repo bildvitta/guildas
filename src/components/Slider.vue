@@ -97,17 +97,13 @@ export default {
       transition: color 0.25s linear;
 
       &:hover {
-        color: $strong-pink;
+        color: $text-strong-pink;
       }
     }
 
     &__item--rounded {
       width: 150px;
       height: 150px;
-    }
-
-    &__item + &__item {
-      margin-left: 15px;
     }
   }
 

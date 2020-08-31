@@ -1,11 +1,11 @@
 <template>
-  <div class="search_wrapper row q-mb-xl margin-fix-header">
-    <q-input class="col-9" borderless v-model="search" @keyup.enter="searchEvents()" placeholder="Pesquise pelo nome do Evento">
+  <div class="search_wrapper row q-mb-xl margin-fix-header relative-position">
+    <q-input class="col-9 q-px-lg" borderless v-model="search" @keyup.enter="searchEvents()" placeholder="Pesquise pelo nome do Evento">
       <template v-slot:prepend>
-        <q-icon name="search" />
+        <q-icon name="search" color="strong-pink"/>
       </template>
     </q-input>
-    <q-btn class="col-3" label="Procurar" flat @click="searchEvents()" />
+    <q-btn class="col-3 bg-medium-purple text-bold text-white absolute" label="Procurar" flat @click="searchEvents()" />
   </div>
 </template>
 
@@ -59,18 +59,12 @@ export default {
   .search_wrapper {
     box-shadow: 0px 3px 6px #7f2bed26;
     border-radius: 10px;
-    position: relative;
 
     .q-input {
-      padding: 0 20px;
 
       .q-field__native { 
-        color: $medium-gray-text;
+        color: $text-medium-gray;
       }
-    }
-
-    .q-icon { 
-      color: $strong-pink;
     }
 
     .q-field__marginal,
@@ -79,13 +73,9 @@ export default {
     }
 
     .q-btn {
-      background-color: $medium-purple;
-      color: #fff;
-      font-weight: 700;
       text-transform: none;
       font-size: 14px;
       padding: 2px 0;
-      position: absolute;
       top: 0;
       right: 0;
       border-radius: 10px;
