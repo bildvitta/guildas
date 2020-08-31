@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <q-page>
     <div class="image-banner" :style="eventImage"></div>
     <single-event-details :event='eventById' class="q-mb-xl"/>
 
@@ -10,7 +10,7 @@
         </div>
       </slider>
     </div>
-  </div>
+  </q-page>
 </template>
 
 <script>

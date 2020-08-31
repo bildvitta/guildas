@@ -1,5 +1,5 @@
 <template>
-  <div class="subject">
+  <q-page class="subject">
     <search-bar/>
     <h2 class="subject__title text-uppercase q-mb-md">{{ subject.name }}</h2>
     <p class="subject__description">{{ subject.description }}</p>
@@ -9,7 +9,7 @@
         <event-card :key="index" :event="event"/>
       </div>
     </div>
-  </div>
+  </q-page>
 </template>
 
 <script>

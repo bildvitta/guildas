@@ -1,5 +1,5 @@
 <template>
-  <div>cases</div>
+  <q-page>cases</q-page>
 </template>
 
 <script>
