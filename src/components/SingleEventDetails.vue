@@ -6,9 +6,9 @@
       </div>
       <div class="col-12 col-sm-6">
         <p class="event-details__date text-medium-purple text-uppercase text-bold">{{ eventDate }} {{ eventTime }}</p>
-        <div class="event-details__location flex">
+        <div class="event-details__location flex no-wrap">
           <q-icon name="location_on" class="event-card__location-icon text-strong-pink"></q-icon>
-          <p class="event-details__location-address q-ml-sm q-mb-none text-darker-purple">{{ event.place }}</p>
+          <p class="event-details__location-address q-ml-sm q-mb-none text-darker-purple" :class="limitLocationString">{{ event.place }}</p>
         </div>
         <q-btn class="event-details__btn bg-strong-pink text-white text-bold" flat label="Simbora!" />
       </div>
@@ -43,6 +43,10 @@ export default {
 
     eventTime () {
       return formatTime(this.event.start_time)
+    },
+
+    limitLocationString () {
+      return this.$q.screen.xs ? 'ellipsis' : ''
     }
   }
 }
