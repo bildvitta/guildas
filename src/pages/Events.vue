@@ -1,37 +1,38 @@
 <template>
-  <div>
+  <q-page>
     <search-bar />
     <carousel />
 
-    <slider slider_title="Fica Ligado!">
-      <div class="slider__item">
-        <q-avatar class="slider__item--rounded">
-          <img class="block" src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
-        <p class="text-center block q-mt-sm slider__item__subject">Assunto</p>
+    <slider sliderTitle="Fica Ligado!" class="subjects-slider-box">
+      <div v-for='(subject, index) in subjects' :key='index' class="slider__item q-mr-md">
+        <subject-card :subject="subject"/>
       </div>
     </slider>
 
-    <slider slider_title="Categoria 1">
-      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
-        <event-card :event="event"></event-card>
+    <slider 
+      v-for="(category, categoryIndex) in categories"
+      :key="categoryIndex" 
+      class="events-slider-box" 
+      v-show="showCategory(category.name)" 
+      :sliderTitle="category.name"
+      :sliderSlug="category.slug"
+    >
+      <div v-for="(event, eventIndex) in events" :key="eventIndex">
+        <div class="slider__item" v-if="category.name && filterEvent(event, category.name)">
+          <event-card :event="event"/>
+        </div>
       </div>
     </slider>
-
-    <slider slider_title="Categoria 2">
-      <div class="slider__item" v-for="(event, index) in eventCards" :key="index">
-        <event-card :event="event"></event-card>
-      </div>
-    </slider>
-  </div>
+  </q-page>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import SearchBar from 'components/SearchBar.vue'
 import Carousel from 'components/Carousel.vue'
 import Slider from 'components/Slider.vue'
 import EventCard from 'components/EventCard.vue'
+import SubjectCard from 'components/SubjectCard.vue'
 
 export default {
   name: 'events-page',
@@ -40,7 +41,8 @@ export default {
     SearchBar,
     Carousel,
     Slider,
-    EventCard
+    EventCard,
+    SubjectCard
   },
 
   data () {
@@ -49,13 +51,19 @@ export default {
     }
   },
 
+  created () {
+    this.setEvents()
+    this.setSubjects()
+    this.setCategories()
+  },
+
   computed: {
-    ...mapGetters('events', ['eventCards']),
+    ...mapGetters('events', ['events']),
+    ...mapGetters('subjects', ['subjects']),
+    ...mapGetters('categories', ['categories']),
 
-    setCategorySliderWidth: function () {
+    setCategorySliderWidth () {
       const cardWidth = 325
-
-      let categoryWidth
 
       return this.categoryCards.length * cardWidth > window.innerWidth
         ? `width: ${this.categoryCards.length * cardWidth}px`
@@ -63,6 +71,18 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    ...mapActions('events', ['setEvents']),
+    ...mapActions('subjects', ['setSubjects']),
+    ...mapActions('categories', ['setCategories']),
+
+    filterEvent (event, category) {
+      return event?.category?.name === category
+    },
+
+    showCategory (categoryName) {
+      return this.events && !!this.events.find(event => event.category.name === categoryName)
+    }
+  }
 }
 </script>

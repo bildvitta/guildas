@@ -14,16 +14,32 @@
 
 $primary            : #C6B1E1;
 $secondary          : #FBF9FF;
-$medium-purple      : #7F2BED;
-$shadow-purple      : #7F2BED26;
-$darker-purple-text : #1b162d;
-$strong-pink        : #FB21E4;
-$medium-gray-text   : #9D9D9D;
-$light-gray-text    : #DBDBDB; 
-
 $dark               : #1D1D1D;
-
 $positive           : #21BA45;
 $negative           : #C10015;
 $info               : #31CCEC;
 $warning            : #F2C037;
+
+//+++++++++++++ CUSTOM 
+
+//text
+$text-medium-purple : #7F2BED;
+$text-darker-purple : #1b162d;
+$text-strong-pink   : #FB21E4;
+$text-medium-gray   : #9D9D9D;
+$text-light-gray    : #DBDBDB; 
+
+//background
+$bg-medium-purple   : #7F2BED;
+$bg-darker-purple   : #1b162d;
+$bg-strong-pink     : #FB21E4;
+$bg-medium-gray     : #9D9D9D;
+$bg-light-gray      : #DBDBDB; 
+
+//shadow colors
+$shadow-purple      : 0px 3px 15px #7F2BED26 !important;
+
+//borders
+$border-purple      : 2px solid #7F2BED26
+
+

@@ -1,18 +1,27 @@
-import EventsAPI from 'src/services/events/events-api'
+import serviceAPI from 'src/services/services'
 import { LocalStorage } from 'quasar'
+import { modifyEventAvatarObject } from 'src/helpers/filters'
 
 const actions = {
-  async setEvents ({ commit }) {
-    const eventsStorage = LocalStorage.getItem('events')
+  async setEvents ({ commit }, query) {
+    const events = await serviceAPI.getList('/events', query)
 
-    if (eventsStorage) {
-      return commit('setEvents', eventsStorage)
+    for (const event in events) {
+      events[event] = modifyEventAvatarObject(events[event])
     }
-
-    const events = await EventsAPI.getEvents('/events')
 
     commit('setEvents', events)
     LocalStorage.set('events', events)
+  },
+
+  async setEventById ({ state, commit }, id) {
+    if (state.events.length) {
+      commit('setEventById', state.events.find(event => event.id === Number(id)))
+    }    
+
+    let event = await serviceAPI.getList(`/events/${id}`)
+
+    commit('setEventById', modifyEventAvatarObject(event))
   }
 }
 

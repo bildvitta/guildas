@@ -1,2 +1,45 @@
 // app global css in SCSS form
 
+//TEXT COLORS
+
+.text-darker-purple {
+  color: $text-darker-purple;
+}
+
+.text-medium-purple {
+  color: $text-medium-purple;
+}
+
+.text-strong-pink {
+  color: $text-strong-pink;
+}
+
+.text-medium-gray {
+  color: $text-medium-gray;
+}
+
+.text-light-gray {
+  color: $text-light-gray;
+}
+
+//BACKGROUND COLORS
+
+.bg-medium-purple {
+  background-color: $bg-medium-purple;
+}
+
+.bg-darker-purple {
+  background-color: $bg-darker-purple;
+}
+
+.bg-strong-pink {
+  background-color: $bg-strong-pink;
+}
+
+.bg-medium-gray {
+  background-color: $bg-medium-gray;
+}
+
+.bg-light-gray {
+  background-color: $bg-light-gray;
+}

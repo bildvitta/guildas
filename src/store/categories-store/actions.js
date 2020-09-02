@@ -1,15 +1,9 @@
-import CategoriesAPI from 'src/services/categories/categories-api'
+import servicesAPI from 'src/services/services'
 import { LocalStorage } from 'quasar'
 
 const actions = {
   async setCategories ({ commit }) {
-    const categoriesStorage = LocalStorage.getItem('categories')
-
-    if (categoriesStorage) {
-      return commit('setCategories', LocalStorage.getItem('categories'))
-    }
-
-    const categories = await CategoriesAPI.getCategories('/categories')
+    const categories = await servicesAPI.getList('/categories')
 
     commit('setCategories', categories)
     LocalStorage.set('categories', categories)

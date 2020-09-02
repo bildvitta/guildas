@@ -1,13 +1,6 @@
-/*
- * This file runs in a Node context (it's NOT transpiled by Babel), so use only
- * the ES6 features that are supported by your Node version. https://node.green/
- */
+const path = require('path')
 
-// Configuration for your app
-// https://quasar.dev/quasar-cli/quasar-conf-js
-/* eslint-env node */
-
-module.exports = function (/* ctx */) {
+module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -19,22 +12,14 @@ module.exports = function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      'axios',
+      'axios'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
       'app.scss',
       'base.scss',
-      'main-nav.scss',
-      'searchbar.scss',
-      'carousel.scss',
-      'mobile-main-nav.scss',
-      'slider.scss',
-      'event-card.scss',
-      'footer.scss',
-      'image-banner.scss',
-      'single-event-details.scss'
+      'mobile-main-nav.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -48,38 +33,31 @@ module.exports = function (/* ctx */) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
+      'material-icons' // optional, you are not bound to it
     ],
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        BASE_URL: 'http://104.131.88.91'
+      },
+
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
-      // transpile: false,
-
-      // Add dependencies for transpiling with Babel (Array of string/regex)
-      // (from node_modules, which are by default not transpiled).
-      // Applies only if "transpile" is set to true.
-      // transpileDependencies: [],
-
-      // rtl: false, // https://quasar.dev/options/rtl-support
-      // preloadChunks: true,
-      // showProgress: false,
-      // gzip: true,
-      // analyze: true,
-
-      // Options below are automatically set depending on the env, set them if you want to override
-      // extractCSS: false,
-
-      // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack (cfg) {
-cfg.module.rules.push({
+        cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /node_modules/
-        })
-      },
+        }),
+          
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias,
+          
+          helpers: path.resolve(__dirname, './src/helpers')
+        }
+      }
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
@@ -107,10 +85,13 @@ cfg.module.rules.push({
       // components: [],
       // directives: [],
 
+      lang: 'pt-br',
+
       // Quasar plugins
       plugins: [
         'LocalStorage',
-        'SessionStorage'
+        'SessionStorage',
+        'Dialog'
       ]
     },
 
@@ -128,9 +109,9 @@ cfg.module.rules.push({
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `Guilda Page`,
-        short_name: `Guilda Page`,
-        description: `A Quasar Framework app`,
+        name: 'Guilda Page',
+        short_name: 'Guilda Page',
+        description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -201,9 +182,8 @@ cfg.module.rules.push({
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (/* cfg */) {
-        // do something with Electron main process Webpack cfg
-        // chainWebpack also available besides this extendWebpack
+      extendWebpack (/*cfg*/) {
+       
       }
     }
   }

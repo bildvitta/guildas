@@ -4,12 +4,9 @@
   left: 0;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0px 3px 15px $shadow-purple;
-  border-bottom: 2px solid $shadow-purple;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
+  box-shadow: $shadow-purple;
+  border-bottom: $border-purple;
+  display: none;
 
   .container {
     display: flex;
@@ -32,10 +29,7 @@
 }
 
 .q-drawer-container {
-  @media (min-width: 769px) {
-    display: none;
-  }
-
+  
   .q-item__label {
     font-family: "Press Start 2P", cursive;
     font-size: 10px;

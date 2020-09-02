@@ -1,8 +1,8 @@
-import http from '../httpconfig'
+import http from './httpconfig'
 
-const getCategories = url => {
+const getList = (url, query = '') => {
   return http
-    .get(url)
+    .get(url, { params: { ...query } })
     .then(response => {
       return response.data
     })
@@ -12,5 +12,5 @@ const getCategories = url => {
 }
 
 export default {
-  getCategories
+  getList
 }

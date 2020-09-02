@@ -1,7 +1,7 @@
 const getters = {
   events: state => state.events,
 
-  eventCards: state => state.eventCards
+  eventById: state => state.eventById
 }   
 
 export default getters

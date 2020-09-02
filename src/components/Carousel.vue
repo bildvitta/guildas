@@ -1,5 +1,6 @@
 <template>
   <q-carousel
+    :class="hideCarousel"
     animated
     v-model="slide"
     navigation
@@ -8,6 +9,7 @@
     arrows
     transition-prev="fade"
     transition-next="fade"
+    control-color="light-gray"
     @mouseenter="toggleAutoplay"
     @mouseleave="toggleAutoplay"
   >
@@ -29,6 +31,12 @@ export default {
     }
   },
 
+  computed: {
+    hideCarousel () {
+      return this.$q.screen.xs && 'hidden'
+    }
+  },
+
   methods: {
     toggleAutoplay () {
       this.autoplay = !this.autoplay
@@ -36,3 +44,27 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .q-carousel {
+    overflow: initial;
+    margin-bottom: 100px;
+
+    &__navigation {
+      position: absolute;
+      bottom: -50px;
+    }
+
+    &__navigation .q-icon {
+      font-size: 10px;
+    }
+
+    &__navigation-icon--active .q-icon { 
+      color: $text-strong-pink; 
+    }
+
+    .q-panel { 
+      border-radius: 10px;
+    }
+  }
+</style>

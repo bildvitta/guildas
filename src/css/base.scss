@@ -20,18 +20,27 @@ li {
   list-style: none;
 }
 
+h2 {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
 a,
 a:visited,
 a:link {
   text-decoration: none;
+  color: initial;
 }
 
 img {
   display: block;
 }
 
+.display-flex {
+  display: flex !important;
+}
+
 .container {
-  // max-width: 1140px;
   width: calc(100% - 40px);
   margin: 0 auto;
 
@@ -43,7 +52,7 @@ img {
 .q-layout {
   padding: 40px 0 60px 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     margin-top: 90px;
   }
 }

@@ -3,6 +3,7 @@
     <div
       ref="slider"
       class="an-slider__container"
+      :id="sliderSlug"
       :class="expandedContainerClass"
       v-on="$listeners"
       @mousedown="mouseDown"
@@ -27,6 +28,11 @@ export default {
     animationOnScroll: {
       type: Boolean,
       default: true
+    },
+
+    sliderSlug: {
+      type: String,
+      default: ''
     }
   },
 
