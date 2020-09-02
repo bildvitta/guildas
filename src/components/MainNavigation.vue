@@ -4,7 +4,7 @@
 
     <ul class="main_nav__link-wrapper flex items-center">
       <li v-for="link in linksData" :key="link.title" class="main_nav__list-item">
-        <router-link class="main_nav__link text-darker-purple" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
+        <router-link class="main_nav__link text-darker-purple" tag="a" :to="link.link" :class="checkPath(link.link)">{{ link.title }}</router-link>
       </li>
     </ul>
   </nav>
