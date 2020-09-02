@@ -1,6 +1,6 @@
 <template>
   <nav id="header" class="main_nav flex items-center justify-between" :class="hideMainNav">
-    <img @click="redirectToHome" class="main_nav__logo cursor-pointer" src="~assets/img/logo.png" alt="NAVE - Logo"/>
+    <img @click="goToHome" class="main_nav__logo cursor-pointer" src="~assets/img/logo.png" alt="NAVE - Logo"/>
 
     <ul class="main_nav__link-wrapper flex items-center">
       <li v-for="link in linksData" :key="link.title" class="main_nav__list-item">
@@ -28,8 +28,8 @@ export default {
   },
 
   methods: {
-    redirectToHome () {
-      this.$router.push('/')
+    goToHome () {
+      this.$router.push({name: 'Home'})
     },
 
     checkPath (path) {

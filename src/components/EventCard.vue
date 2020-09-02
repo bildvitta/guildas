@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/eventos/${ event.id }`">
+  <router-link :to="eventURL">
     <q-card class="event-card bg-secondary q-mr-md" :style="isFullWidth" flat>
       <div class="relative-position">
         <div class="event-card__subjects">
@@ -48,6 +48,10 @@ export default {
   },
 
   computed: {
+    eventURL () {
+      return `/eventos/${this.event.id}`
+    },
+
     eventImage () {
       return `background-image: url(${this.event?.avatar?.medium});`
     },
@@ -60,12 +64,12 @@ export default {
       return formatTime(this.event.start_time)
     },
 
-    isFullWidth () {
-      if (this.$route.name != 'Subject') {
-        return false
-      }
+    isSubject () {
+      return this.$route.name === 'Subject'
+    },
 
-      return this.windowSize < 750 && 'width: 100%;'
+    isFullWidth () {
+      return this.windowSize < 750 && this.isSubject && 'width: 100%;'
     }
   },
 

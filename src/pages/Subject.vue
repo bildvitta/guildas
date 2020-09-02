@@ -5,7 +5,7 @@
     <p class="subject__description">{{ subject.description }}</p>
 
     <div class="flex q-mt-xl">
-      <div class="slider__item q-mb-md" v-for="(event, index) in subject.events" :style="marginBottomIsNull" :key="`event-${index}`">
+      <div class="slider__item q-mb-md" v-for="(event, index) in subject.events" :class="noHorizontalMargin" :key="`event-${index}`">
         <event-card :key="index" :event="event"/>
       </div>
     </div>
@@ -45,12 +45,12 @@ export default {
       return this.subjects
     },
 
-    marginBottomIsNull () {
-      if (this.$route.name != 'Subject') {
-        return false
-      }
+    isSubject () {
+      return this.$route.name === 'Subject'
+    },
 
-      return this.windowSize < 750 ? 'margin-left: 0; margin-right: 0' : ''
+    noHorizontalMargin () {
+      return this.windowSize < 750 && this.isSubject && ['q-ml-none', 'q-mr-none']
     }
   },
 
@@ -67,7 +67,6 @@ export default {
 
 <style lang="scss">
   .subject {
-
     &__title {
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;

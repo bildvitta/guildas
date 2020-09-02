@@ -26,18 +26,16 @@ export const modifySubjectImagesObject = subject => {
 }
 
 export const modifySubjectEventsAvatarObject = subject => {
-  if (subject.events.length === 0) return subject
-
-  if (subject.events.length) {
-    for (const event in subject.events) {
-      subject.events[event].avatar = {
-        small: subject.events[event]?.avatar
-          ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.small?.url 
-          : 'https://via.placeholder.com/325x182',
-        medium: subject.events[event]?.avatar
-          ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.medium?.url
-          : 'https://via.placeholder.com/750x364'
-      }
+  if (!subject.events.length) return subject
+  
+  for (const event in subject.events) {
+    subject.events[event].avatar = {
+      small: subject.events[event]?.avatar
+        ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.small?.url 
+        : 'https://via.placeholder.com/325x182',
+      medium: subject.events[event]?.avatar
+        ? process.env.BASE_URL + subject.events[event]?.avatar?.formats?.medium?.url
+        : 'https://via.placeholder.com/750x364'
     }
   }
 

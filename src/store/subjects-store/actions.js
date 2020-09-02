@@ -19,7 +19,6 @@ const actions = {
     if (state.subjects.length > 0) {
       return commit('setSubjects', state.subjects.find(subject => subject.id === Number(id)))
     }
-    console.log('teste')
 
     let subject = await servicesAPI.getList(`/subjects/${id}`)
 

@@ -54,7 +54,6 @@ export default {
 
 <style lang="scss">
   .event-details {
-    
     &__title-box { 
       margin-top: 50px;
     }

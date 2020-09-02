@@ -61,7 +61,6 @@ export default {
     border-radius: 10px;
 
     .q-input {
-
       .q-field__native { 
         color: $text-medium-gray;
       }
