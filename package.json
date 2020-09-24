@@ -6,8 +6,6 @@
   "author": "Guilherme Queiróz",
   "private": true,
   "scripts": {
-    "build": "quasar build",
-    "deploy": "vercel",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
