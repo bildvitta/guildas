@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-  baseURL: 'http://104.131.88.91/',
+  baseURL: 'https://homolog-eventos.bivilabs.com.br/',
   timeout: 5000
 })
 

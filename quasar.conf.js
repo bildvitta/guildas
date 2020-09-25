@@ -40,7 +40,7 @@ module.exports = function (ctx) {
     build: {
       distDir: ctx.mode.spa ? 'public' : null,
       env: {
-        BASE_URL: 'http://104.131.88.91'
+        BASE_URL: 'https://homolog-eventos.bivilabs.com.br'
       },
 
       vueRouterMode: 'history', // available values: 'hash', 'history'
